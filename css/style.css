@@ -1,0 +1,183 @@
+@import url('fonts/Cuprum/');
+@import url('fonts/Lifehack/');
+
+.cuprum {
+	font-family: 'Cuprum', sans-serif !important;
+}
+
+.lifehack {
+	font-family: 'Lifehack' !important;
+}
+
+.big {
+	min-height: 200px;
+}
+
+.bd-lead {
+	font-size: 1.5rem !important;
+	font-weight: 300 !important;
+}
+.img-li {
+	width: 400px;
+	height: 250px;
+}
+
+.index {
+	width: 100%;
+	min-height: 100%;
+}
+
+/* Сгибание изображения гармошкой */
+
+.folded {
+  margin: 0;
+  padding: 0;
+  width: 320px;
+  height: 360px;
+  display: flex;
+}
+.folded-itm {
+  list-style: none;
+  width: 25%;
+  background: url(../img/2.jpg);
+  background-size: cover;
+  height: 100%;
+  transition: 0.5s;
+}
+.folded:hover .folded-itm:nth-child(odd) {
+  transform: skewY(15deg);
+  box-shadow: inset 20px 0 50px rgba(0,0,0, .5);
+}
+.folded:hover .folded-itm:nth-child(even) {
+  transform: skewY(-15deg);
+  box-shadow: inset 20px 0 50px rgba(0,0,0, .5);
+}
+
+.folded .folded-itm:nth-child(1) {
+  background-position: 0;
+}
+.folded .folded-itm:nth-child(2) {
+  background-position: -80px;
+}
+.folded .folded-itm:nth-child(3) {
+  background-position: -160px;
+}
+.folded .folded-itm:nth-child(4) {
+  background-position: -240px;
+}
+
+/* Наведение на ссылку */
+
+a.link-anim {
+    color:#ffeb3b;
+    line-height: 1;
+    text-decoration:none;
+    cursor: pointer;
+}
+a.link-anim:after {
+    background-color: #ffeb3b;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .5s ease-in-out;
+}
+a.link-anim:hover:after,
+a.link-anim:focus:after {
+    width: 100%;
+}
+
+/* Большой заголовок с фоном */
+
+.big-header1 {
+	color: #fff;
+	text-align: center;
+	font-size: 48px;
+	font-weight: bold;
+	background: url("../img/bg1.jpg");
+	-moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+	padding: 40px;
+}
+
+.big-header1-small {
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  background: url("../img/bg1.jpg");
+  -moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+  padding: 40px;
+}
+
+.big-header2 {
+	color: #fff;
+	text-align: center;
+	font-size: 48px;
+	font-weight: bold;
+	background: url("../img/bg2.jpg");
+	-moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+	padding: 40px;
+}
+
+.big-header3 {
+	color: #fff;
+	text-align: center;
+	font-size: 48px;
+	font-weight: bold;
+	background: url("../img/bg3.jpg");
+	-moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+	padding: 40px;
+}
+
+.big-header4 {
+	color: #fff;
+	text-align: center;
+	font-size: 48px;
+	font-weight: bold;
+	background: url("../img/bg4.jpg");
+	-moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+	padding: 40px;
+}
+
+/* Футер анимированный */
+
+footer.index-footer {
+	background: url(../img/city.png) repeat-x 0 100%,
+                url(../img/obl2.png) no-repeat,
+                url(../img/obl1.png) no-repeat,
+                url(../img/obl2.png) no-repeat,
+                url(../img/obl1.png) no-repeat,
+                url(../img/obl1.png) no-repeat,
+                linear-gradient(to top, #5080b1, #004e8c);
+    animation: city 30s linear infinite;
+    -webkit-animation: city 30s linear infinite;
+}
+
+@keyframes city {
+    from { background-position: -928px 100%, 150% 30%, 50% 15%, -220% 5%, -150% 50%, 150% 30%, 0 0;}
+    to { background-position: 0 100%, -200% 10%, -30% 15%, 150% 10%, 150% 55%, 50% 15%, 0 0; }
+}
+}
+   
+@-webkit-keyframes city {
+    from { background-position: -928px 100%, 120% 30%, 50% 15%, -220% 5%, -150% 50%, 120% 30%, 0 0;}
+    to { background-position: 0 100%, -200% 10%, -30% 15%, 150% 10%, 120% 55%, 50% 15%, 0 0; }
+}
+
