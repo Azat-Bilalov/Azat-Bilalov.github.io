@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <title>TerraБАШКОРТ | Культура</title>
+    <style>
+        @font-face {
+            font-family: 'Galaxy Girl'; 
+            src: url(Galaxy_Girl.otf); 
+        }
+        p.begin::first-letter {
+            font-size: 3em;
+            /*padding: 3px;*/
+            margin-right: 3px;
+            margin-left: -3px;
+            color: #e7685d;
+            float: left;
+            line-height: 0.3em;
+        }
+
+        .proo {
+            max-width: 40em;
+            min-width: 15em;
+            overflow: auto;
+            margin: 0 auto;
+            position: fixed;
+            top: 3ex; 
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        .footer-bs {
+            background-color: #3c3d41;
+            margin-top: 16px;
+            padding: 20px 40px;
+            color: rgba(255,255,255,1.00);
+            border-bottom-right-radius: 6px;
+        }
+        .footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+        .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+        .footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+        .footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+        .footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+        .footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+        .footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+        .footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+        .footer-bs .footer-nav h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom:10px;
+        }
+
+        .footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+        .footer-bs .footer-nav ul.list li { padding:5px 0px;}
+        .footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+        .footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+        .footer-bs .footer-social ul { list-style:none; padding:0px; }
+        .footer-bs .footer-social h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .footer-bs .footer-social li { padding:5px 4px;}
+        .footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+        .footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+        .footer-bs .footer-ns h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom:10px;
+        }
+        .footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+        @media (min-width: 768px) {
+            .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+        }
+    </style>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #9ACD32;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-family: 'Galaxy Girl'; font-size: 28px">TerraБАШКОРТ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav" style="margin-inline-start: auto;">
+                    <a class="nav-link p-lg-3" href="history.html">История</a>
+                    <a class="nav-link p-lg-3" href="kulture.html">Культура</a>
+                    <a class="nav-link p-lg-3" href="area.html">Места</a>
+                    <a class="nav-link p-lg-3" href="numbers.html">Цифры</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+    	<h3 class="text-center p-2">Республика Башкортстан в цифрах</h3>
+
+		<div class="list-group mb-5 mt-3">
+			<a class="list-group-item list-group-item-action" href="#Местонахождение">Местонахождение</a>
+			<a class="list-group-item list-group-item-action" href="#Уфа">Столица Башкирии</a>
+			<a class="list-group-item list-group-item-action" href="#Транспорт">Транспорт</a></a>
+			<a class="list-group-item list-group-item-action" href="#Ресурсы">Полезные ископаемые</a>
+			<a class="list-group-item list-group-item-action" href="#Промышленность">Промышленность</a>
+			<a class="list-group-item list-group-item-action" href="#Факты">Факты</a>
+		</div>
+
+
+		<p class="begin">Республика Башкортостан — субъект Российской Федерации, территориально расположенный в центральной части страны между Волгой и Уралом.</p>
+
+		<p class="mb-3" id="Местонахождение"><strong>Местонахождение. </strong>Башкирия расположена на границе Европы и Азии; на пересечении важнейших водных, железнодорожных, трубопроводных и автомобильных магистралей, связывающих европейскую часть страны с Уралом, Сибирью и среднеазиатскими государствами.<br/>
+		Граничит на севере с Пермским краем (от Уфы до Перми на авто – 471 км) и Свердловской областью (до Екатеринбурга – 543 км), на востоке с Челябинской (до Челябинска – 417 км), на юге с Оренбургской (до Оренбурга – 372 км), на юге с Самарской областями (до Самары – 460 км), а на западе – Республикой Татарстан (до Казани – 527 км) и Удмуртской Республикой (до Ижевска – 342 км). Входит в Приволжский федеральный округ.</p>
+
+		<p id="Уфа"><strong>Столица Башкирии. </strong>Столичным городом республики является <i>Уфа</i>. По данным 2017 года, в столице Республики проживало 1 млн 115 тыс. 560 человек. В 2018 году уфимцев свыше 1 млн 121 тысячи человек.<br/>
+		В настоящее время в Уфе ведется строительство современных гостиниц всемирно известных брендов — КЕСКО-Hilton, Holiday Inn, Radisson, Hamplton by Hilton. В Республике Башкортостан открылся крупнейший в регионе выставочный комплекс «ВДНХ-ЭКСПО» общей площадью более 15 тыс. м2, который уже принимает выставки и форумы общероссийского и международного масштаба.<br/>
+		Глава Республики Башкортостан - Радий Хабиров (с 11 октября 2018 года), мэр города - Сергей Греков.</p>
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="img/Уфа.jpg" title="Уфа">
+
+		<p id="Транспорт"><strong>Транспорт. </strong>В транспортной сфере края большое значение играет уфимский аэропорт. Он имеет имеет две взлетно-посадочные полосы и обслуживает более 40 российских и зарубежных авиакомпаний. Аэропорт состоит из двух терминалов — внутреннего и международного — общей пропускной способностью 800 пассажиров в час.<br/>
+		Также на крупнейшей реке Башкортстана - Белой ведётся активное судоходство, что обеспечивает связь между Уральского экономического района с Европейской частью России. Кроме того, Урал - граница между Европой и Азией, таким образом через республику проходит пять крупных магистралей.</p>
+
+		<p id="Ресурсы"><strong>Ресурсы. </strong>Индекс добычи всех видов полезных ископаемых в 2013 году составил 104,2% по отношению к 2012 году. Башкортостан, добывая 2,9% российской нефти, включая газовый конденсат, входит в пятерку регионов России с наибольшими объемами добычи. Регион занимает третье место в Приволжском федеральном округе с долей 1,3%. Добыча полезных ископаемых (кроме топливно- энергетических) возросла за год на 17,5%.<br/>
+		В 2013 году выпуск продукции на предприятиях обрабатывающей промышленности увеличился на 2,3% по сравнению с 2012 годом. Республика Башкортостан перерабатывает каждую десятую тонну российской нефти, занимая по данному показателю 1-е место в Российской Федерации.</p>
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="img/Нефть.jpg" title="Добыча нефти">
+
+		<p id="Промышленность"><strong>Промышленность. </strong>Основной отраслью промышленности в Башкортстана является химическая промышленность. Она стала основой экономики и имеет огромное общехозяйственное и оборонное значение как для развития республики, так и страны в целом. Башкортостан — крупнейший в России производитель химической продукции, занимает 1-е место по выпуску кальцинированной соды, бензола, 2-е — по выпуску пластмасс в первичных формах, этилена, синтетических каучуков, 3-е — по выпуску каустической соды и серы.<br/>
+		Кроме того, край  обладает значительными запасами лесных ресурсов. Общая площадь земель лесного фонда республики оценивается в 6,2 млн га. Общие запасы древесины в лесах региона оцениваются в 759,3 млн м3 . Преобладают береза, хвойные породы, дуб, клен, сосредоточены самые обширные в стране площади липы — самого продуктивного медоносного дерева. В 2013 году показатель объема обработки древесины и производства изделий из дерева превысил значение 2012 года и составил 103,8%. К тому же В лесах республики выделены памятники природы, созданы государственные природные заказники и заповедники. Природные парки расположены на площади более 1 миллион гектаров.<p/>
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="img/Башкирский_лес.jpg" title="Башкирский лес">
+		<p class="mb-1">По основным показателям сельскохозяйственного производства республика занимает ведущие позиции среди субъектов Российской Федерации: по количеству поголовья крупного рогатого скота и производству меда — 1-е место; по количеству поголовья лошадей и производству молока – 2-е место; по производству скота и птицы на убой (в живом весе) — 6-е место. 40% населения региона проживает в сельской местности. В основном производится:</p>
+
+		<ul class="list-group list-group-flush mb-4">
+			<li class="list-group-item">Зерно</li>
+			<li class="list-group-item">Сахарная свекла</li>
+			<li class="list-group-item">Масленичные культуры</li>
+			<li class="list-group-item">Овощи</li>
+			<li class="list-group-item">Кормовые культуры</li>
+			<li class="list-group-item">Молочная и мясная продукция</li>
+		</ul>
+		
+		
+		<p id="Факты"><strong>Факты. </strong>Интересные факты о крае:
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">В Республике проживают представители 160 национальностей, ведущие религии – ислам и православное христианство</li>
+				<li class="list-group-item">В составе 9 городских округов и 54 района</li>
+				<li class="list-group-item">Города республиканского значения: Агидель, Кумертау, Нефтекамск, Октябрьский, Салават, Сибай, Стерлитамак, Межгорье, Уфа</li>
+				<li class="list-group-item">Протяжённость региона с севера на юг — 550 километров, с запада на восток – 430 километров. Вы можете</li>
+				<li class="list-group-item">Высшая точка республики – гора Ямантау, ее высота равна 1640 метрам</li>
+				<li class="list-group-item">Башкирия славится своими гидроресурсами: на ее территории 12 000 рек и около 2700 озёр, прудов и водоёмов, в них водится 42 вида рыб. В одном только Буздякском районе 20 прудов и 6 водохранилищ общей площадью 1021,6 гектаров</li>
+				<li class="list-group-item">Протяженность рек: Белой (Агидели) – 1430 километров, Уфы – 918 километров, Демы – 535 километров, Сим – 239 километров, Нугуш – 235 километров, Уршак – 193 километров, Ашкадар – 165 километров, Стерли – 94 километров</li>
+				<li class="list-group-item">Республика по праву считается зеленой – леса занимают более 40% ее территории; 6,9% площади Башкортостана – это особо охраняемые природные зоны</li>
+				<li class="list-group-item">В Башкирии четыре природных парка и 180 естественных памятников природы</li>
+				<li class="list-group-item">ежегодно Башкортостан посещает до 1 млн человек</li>
+				<li class="list-group-item">В Республике наибольшей популярностью пользуется посещение природных достопримечательностей</li>
+				<li class="list-group-item">специальное предложение местной туриндустрии – это организованные сплавы по рекам, протекающим в малодоступных для человека местах</li>
+				<li class="list-group-item">Развито санаторно-курортное лечение и лечебно-оздоровительный туризм: в Башкирии круглогодично действуют 31 санаторий и профилакторий, 9 известных на всю Россию курортов, среди них наиболее популярны: «Янган-тау», «Красноусольск», «Якты-куль» и «Ассы»</li>
+				<li class="list-group-item">Развит горнолыжный туризм (особенно в восточной части Республики)</li>
+				<li class="list-group-item">В Уфе 106 отелей и гостиниц, где могут разместиться 6, 5 тысячи человек</li>
+				<li class="list-group-item">К вашим услугам более чем 30 баз отдыха и пансионатов, 19 горнолыжных центров</li>
+			</ul>
+		</p>
+
+	</div>
+
+	<footer class="footer-bs container-fluid">
+        <div class="row">
+            <div class="col-md-3 footer-brand animated fadeInLeft">
+                <h2 class="d-sm-block d-md-none d-lg-block" style="font-family: 'Galaxy Girl'; font-size: 24px">TerraБАШКОРТ</h2>
+                <h2 class="d-md-block d-lg-none d-none" style="font-family: 'Galaxy Girl'; font-size: 16px">TerraБАШКОРТ</h2>
+                <p>Сайт, помогающий в поиске интересующей информации о Республике Башкортстан. Написан «с нуля» с использованием библиотеки Bootstrap 5.</p>
+                <p>© 2021 Bilalov A. K.</p>
+            </div>
+            <div class="col-md-4 footer-nav animated fadeInUp">
+                <h4>Меню —</h4>
+                <div class="col-md-6">
+                    <ul class="pages">
+                    <li><a href="history.html">История</a></li>
+                    <li><a href="kulture.html">Культура</a></li>
+                    <li><a href="area.html">Места</a></li>
+                    <li><a href="numbers.html">Цифры</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 footer-social animated fadeInDown">
+                <h4>Подписаться в</h4>
+                <ul>
+                    <li><a href="https://vk.com/id162340153">VK</a></li>
+                    <li><a href="#">Telegram</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-ns animated fadeInRight">
+                <h4>Поиск</h4>
+                <p>Позволяет быстро найти интересующую информацию (тестовая функция)</p>
+                <p>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                        </span>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+  </body>
+</html>

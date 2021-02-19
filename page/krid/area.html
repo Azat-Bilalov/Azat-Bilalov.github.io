@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <title>TerraБАШКОРТ | Культура</title>
+    <style>
+        @font-face {
+            font-family: 'Galaxy Girl'; 
+            src: url(Galaxy_Girl.otf); 
+        }
+        p.begin::first-letter {
+            font-size: 3em;
+            /*padding: 3px;*/
+            margin-right: 3px;
+            margin-left: -3px;
+            color: #e7685d;
+            float: left;
+            line-height: 0.3em;
+        }
+
+        .proo {
+            max-width: 40em;
+            min-width: 15em;
+            overflow: auto;
+            margin: 0 auto;
+            position: fixed;
+            top: 3ex; 
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        .footer-bs {
+            background-color: #3c3d41;
+            margin-top: 16px;
+            padding: 20px 40px;
+            color: rgba(255,255,255,1.00);
+            border-bottom-right-radius: 6px;
+        }
+        .footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+        .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+        .footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+        .footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+        .footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+        .footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+        .footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+        .footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+        .footer-bs .footer-nav h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom:10px;
+        }
+
+        .footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+        .footer-bs .footer-nav ul.list li { padding:5px 0px;}
+        .footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+        .footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+        .footer-bs .footer-social ul { list-style:none; padding:0px; }
+        .footer-bs .footer-social h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .footer-bs .footer-social li { padding:5px 4px;}
+        .footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+        .footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+        .footer-bs .footer-ns h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom:10px;
+        }
+        .footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+        @media (min-width: 768px) {
+            .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+        }
+    </style>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #9ACD32;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-family: 'Galaxy Girl'; font-size: 28px">TerraБАШКОРТ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav" style="margin-inline-start: auto;">
+                    <a class="nav-link p-lg-3" href="history.html">История</a>
+                    <a class="nav-link p-lg-3" href="kulture.html">Культура</a>
+                    <a class="nav-link p-lg-3" href="area.html">Места</a>
+                    <a class="nav-link p-lg-3" href="numbers.html">Цифры</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+    	<h3 class="text-center p-2">Места обязательные к посещению в Республике Башкортстан</h3>
+
+		<div class="list-group mb-5 mt-3">
+			<a class="list-group-item list-group-item-action" href="#Иремель">Гора Иремель</a>
+			<a class="list-group-item list-group-item-action" href="#Зубы_Шурале">Айгирские скалы</a>
+			<a class="list-group-item list-group-item-action" href="#Инзерские_Зубчатки">Инзерские Зубчатки</a>
+			<a class="list-group-item list-group-item-action" href="#Аскинская_пещера">Аскинская пещера</a>
+			<a class="list-group-item list-group-item-action" href="#Белая">Река Белая</a>
+			<a class="list-group-item list-group-item-action" href="#Атыш">Водопад Атыш</a>
+			<a class="list-group-item list-group-item-action" href="#Карагайкуль">Озеро Карагайкуль</a>
+			<a class="list-group-item list-group-item-action" href="#Шульган_Таш">Заповедник Шульган Таш</a>
+			<a class="list-group-item list-group-item-action" href="#Капова_пещера">Капова пещера</a>
+			<a class="list-group-item list-group-item-action" href="#Красный_Ключ">Источник Красный Ключ</a>
+		</div>
+
+	<p class="begin">Республика Башкортостан – изумительно красивый край, на просторах которого раскинулись зеленые леса и луга, живописные озера и реки, гордые возвышенности, памятники древних культур и множество загадочных пещер. В зимний период это красивое место притягивает на свои горнолыжные курорты множество туристов, а самые красивые фото не дадут забыть о таком интересном путешествии.</p>
+
+	<p id="Иремель"><strong>Гора Иремель. </strong>Одна из самых красивых и живописных среди Уральских гор, и находится она на границе между Челябинской областью и Башкирией. Иремель разделяется на 2 части – большой горный массив и малый. Склоны горы усыпаны огромными валунами-курумами, также на ней есть каменные котлованы, в которых после дождей скапливается чистая вода, пригодная для питья.<br/>
+	Вершины Иремеля даже в летний период покрыты снегом. Гора поражает своей живописной растительностью, в нижней ее части растут высокие хвойные деревья, выше можно увидеть пояс с редколесьем, далее идет тундра с карликовыми растениями.<br/>
+	По легендам, еще с давних времен Иремель считался святым местом и простым людям ход сюда был закрыт. В основном эти красивые места посещали люди со сверхъестественными способностями (эзотерики, экстрасенсы, шаманы), чтобы зарядить свою карму.</p>
+	<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="area/img/Иремель.jpg" title="Гора Иремель">
+
+	<p id="Зубы_Шурале"><strong>Айгирские скалы, или «Зубы Шурале». </strong>Зубы Шурале – именно так местное население называет украшенный величественными скалами северный склон хребта Караташ. Туристам ближе другое название – Айгирские скалы, по названию расположенной неподалеку железнодорожной станции Айгир.<br/>
+	Скальные гребни гор величественно нависают над долиной Малого Инзера. Большинство скал имеют свои названия, например, Голова Льва, очень похожая на профиль животного.<br/>
+	Со скальных зубцов открываются удивительной красоты виды на окрестности. На севере видны склоны хребта Малый Ямантау, справа от него – Большой Ямантау, также можно рассмотреть Синие скалы.</p>
+	<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="area/img/Айгирские_скалы.jpg" title="Гора Иремель">
+
+	<p id="Инзерские_Зубчатки"><strong>Инзерские Зубчатки. </strong>Одним из самых красивых мест Южного Урала по праву признаны Инзерские Зубчатки. Это труднодоступный хребет в междуречье рек Тирлян и Большой Инзер в Белорецком районе Башкирии. Свое название хребет получил по реке Инзер и скалам, которые гордо возвышаются над ней подобно зубцам. Зубчатки окружают одни из наиболее величественных гор южной части Урала: Кумардак, Яматау, Ялангас.<br/>
+	Выделяют 3 части хребта, но самой красивой и посещаемой является Скальный цирк. Скалы необычных форм в виде зубцов раскинулись в этом месте по кругу, их высота достигает 33-35 метров. Севернее Скального цирка расположена скала Смотровая площадка. С нее открывается незабываемый вид на запад и гребень Зубчаток.</p>
+	<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="area/img/Инзерские_Зубчатки.jpg" title="Гора Иремель">
+
+	<p id="Аскинская_пещера"><strong>Аскинская ледяная пещера. </strong>Красивый памятник природы, интересный своими необычными ледяными образованиями, расположенный в Архангельском районе Башкортостана. Вход в пещеру находится в 2 километрах от деревни Солонцы, на восточном склоне хребта Уралта на высоте 70 метров над уровнем реки Аскын.<br/>
+	Пещера представляет собой карстовую мешкообразную полость, которая состоит из великолепного зала шириной более 60, длиной до 105 и высотой около 26 метров. Пол грота покрыт ледником, благодаря климатическим особенностям пещеры он не тает даже в жаркий летний период.<br/>
+	Аскинский грот славится большими ледяными сталагмитами высотой 8-12 метров с диаметром основания до 5 метров. Необычна и форма ледяных чудес: некоторые столбы поднимаются практически до потолка. Поражает также акустика внутри пещеры, усиливающая любой звук. Посетить это удивительное место можно только в холодный период, летом вход закрыт, чтобы не допустить таяния.</p>
+	<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="area/img/Аскинская_ледяная_пещера.jpg" title="Гора Иремель">
+
+	<p id="Белая"><strong>Река Белая. </strong>Является многоводным притоком реки Камы, ее длина достигает 1430 километров. Начинается река Белая у подножия хребта Аваляк и течет по всей территории Башкирии.<br/>
+	Белая – это не только красивая достопримечательность республики, но и ее важная водная магистраль, так как она входит в водный транспортный маршрут Москва-Уфа, по которому устраиваются увлекательные туристические сплавы. Берега реки покрыты лесами и степью, здесь часто встречаются ивы, тополя, кусты шиповника.<br/>
+	В речке живут щуки, плотва, окуни, сомы, голавли, стерляди, густеры, судаки, чехони, пескари, форели и другие рыбы. Побережье Белой весьма живописно, а вода удивляет своей прозрачностью.</p>
+	<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="area/img/Река_Белая.jpg" title="Гора Иремель">
+
+	<p id="Атыш"><strong>Водопад Атыш. </strong>С башкирского название водопада переводится как «выстрел». Он действительно словно выстреливает из грота пещеры Кузь-язь-таш, пробив ее насквозь. Водопад уникален тем, что вытекает из скалы и падает с отвесной высоты (около 4 метров над уровнем реки Лемезы), подобных ему на Урале больше нет.<br/>
+	Под водопадом сформировалось небольшое озеро, также к нему выходит подземная река. Рядом с этим красивым местом расположены множество пещер, одна из которых – Заповедная, ранее здесь было святилище предков местных жителей.</p>
+	<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="area/img/Водопад_Атыш.jpg" title="Гора Иремель">
+
+	<p id="Карагайкуль"><strong>Озеро Карагайкуль. </strong>Находится в Учалинском районе Башкортостана. Озеро Ворожеич (Карагайкуль) очень интересно своими легендами и историями, геологией и своеобразной красотой. По преданиям, в далекие времена на его берегах совершались магические обряды, отсюда и появилось колдовское название Ворожеич.<br/>
+	В озере водится карась, линей, плотва, уклейка, щук, окунь. Здесь очень красивая природа: возле берегов произрастает кувшинка, камыш, роголистники и кубышки; окружено небольшими холмами, которые поросли березками.<br/>
+	Это удивительное и красивое место манит не только любителей природы, но и геологов и любителей камней. Около Карагайкуля выходит на поверхность яшма – ценный поделочный камень.</p>
+	<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="area/img/Озеро_Карагайкуль.jpg" title="Гора Иремель">
+
+	<p id="Шульган_Таш"><strong>Природный заповедник Шульган Таш. </strong>Расположен в Южной части Урала, его площадь занимает более 22 гектаров. Основной причиной основания Шульган Таш стала медоносная бурзянская бортовая пчела, на территории заповедника живет около 140 пчелиных семей.<br/>
+	Заповедник стал домом для 206 видов птиц, 30 разновидностей рыб, а также земноводных, пресмыкающихся и млекопитающих. 67 видов животных Шульган Таша занесены в Красную книгу Башкортостана, 31 вид – в Красную книгу РФ.<br/>
+	Богато это красивое место и представителями растительного мира: свыше 800 видов растений, 233 вида лишайника, 184 – мха, 202 – водорослей. 57 из них занесены в Красную книгу Башкортостана, 14 – Российской Федерации.</p>
+	<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="area/img/ПЗ_Шульган_Таш.jpg" title="Гора Иремель">
+	<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="area/img/ПЗ_Шульган_Таш1.jpg" title="Гора Иремель">
+
+	<p id="Капова_пещера"><strong>Капова пещера. </strong>Одно из наиболее красивых мест Башкирии, расположенное в Бурзянском районе на территории заповедника Шульган Таш. Пещера славится своими наскальными рисунками периода палеолита и имеет историческое, археологическое и культурное значение.<br/>
+	Капова пещера образована несколько миллионов лет назад посредством вымывания грунта водами речки Шульган Таш и имеет длину более 3 километров. Вход в нее расположен в южной части склона горы Сарыкускан на правом берегу речки Белой – это впечатляющая арка, именуемая Порталом.<br/>
+	Капова пещера имеет 3 яруса, протяженность первого составляет около 300 метров, далее по вертикальному колодцу можно подняться на второй, из которого есть крутой спуск на самый нижний этаж к руслу Подземного Шульган Таша.<br/>
+	Большая часть наскальных рисунков находится на среднем ярусе.</p>
+	<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="area/img/Капова_пещера.jpg" title="Гора Иремель">
+	<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="area/img/Капова_пещера1.jpg" title="Гора Иремель">
+
+	<p id="Красный_Ключ"><strong>Источник Красный Ключ. </strong>Самый мощный источник в России и второй по величине в мире. Красный ключ – это выход на поверхность подземной реки Яман-Елга («Плохая-река»). Сильный поток бьет из двух больших соединяющихся карстовых воронок: глубина одной составляет 38 метров, второй – 20 метров.<br/>
+	Вода источника насыщена большим количеством минералов и микроэлементов, также в ней растворено немало извести. Ученые подсчитали, что за 1 секунду источник выбрасывает с водой около 1 килограмма известняка.<br/>
+	В XIX веке в этом месте работала мельница, затем бумажная фабрика и маленькая электростанция. Их генераторы приводились в движение энергией воды источника. В середине 1970-х годов фабрику закрыли. Сейчас на ее месте работает завод по разливу питьевой воды «Красный Ключ». Несмотря на содержание карбонатов, вода пригодна для питья, приятная на вкус и чистая.</p>
+	<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-3" src="area/img/Красный_Ключ.jpg" title="Гора Иремель">
+
+	</div>
+
+	<footer class="footer-bs container-fluid">
+        <div class="row">
+            <div class="col-md-3 footer-brand animated fadeInLeft">
+                <h2 class="d-sm-block d-md-none d-lg-block" style="font-family: 'Galaxy Girl'; font-size: 24px">TerraБАШКОРТ</h2>
+                <h2 class="d-md-block d-lg-none d-none" style="font-family: 'Galaxy Girl'; font-size: 16px">TerraБАШКОРТ</h2>
+                <p>Сайт, помогающий в поиске интересующей информации о Республике Башкортстан. Написан «с нуля» с использованием библиотеки Bootstrap 5.</p>
+                <p>© 2021 Bilalov A. K.</p>
+            </div>
+            <div class="col-md-4 footer-nav animated fadeInUp">
+                <h4>Меню —</h4>
+                <div class="col-md-6">
+                    <ul class="pages">
+                    <li><a href="history.html">История</a></li>
+                    <li><a href="kulture.html">Культура</a></li>
+                    <li><a href="area.html">Места</a></li>
+                    <li><a href="numbers.html">Цифры</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 footer-social animated fadeInDown">
+                <h4>Подписаться в</h4>
+                <ul>
+                    <li><a href="https://vk.com/id162340153">VK</a></li>
+                    <li><a href="#">Telegram</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-ns animated fadeInRight">
+                <h4>Поиск</h4>
+                <p>Позволяет быстро найти интересующую информацию (тестовая функция)</p>
+                <p>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                        </span>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </footer>
+	
+  </body>
+</html>
