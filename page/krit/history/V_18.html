@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <title>TerraБАШКОРТ | Домашняя страница</title>
+	<style>
+		@font-face {
+			font-family: 'Galaxy Girl'; 
+			src: url(../Galaxy_Girl.otf); 
+		}
+		p.begin::first-letter {
+			font-size: 3em;
+			/*padding: 3px;*/
+			margin-right: 3px;
+			margin-left: -3px;
+			color: #e7685d;
+			float: left;
+			line-height: 0.3em;
+		}
+
+		.proo {
+			max-width: 40em;
+			min-width: 15em;
+			overflow: auto;
+			margin: 0 auto;
+			position: fixed;
+			top: 3ex; 
+			left: 0;
+			right: 0;
+			z-index: 999;
+		}
+
+		.footer-bs {
+			background-color: #3c3d41;
+			margin-top: 16px;
+			padding: 20px 40px;
+			color: rgba(255,255,255,1.00);
+			border-bottom-right-radius: 6px;
+		}
+		.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+		.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+		.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+		.footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+		.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+		.footer-bs .footer-nav h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+
+		.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.list li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+		.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+		.footer-bs .footer-social ul { list-style:none; padding:0px; }
+		.footer-bs .footer-social h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		.footer-bs .footer-social li { padding:5px 4px;}
+		.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+		.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+		.footer-bs .footer-ns h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+		.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		@media (min-width: 768px) {
+			.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+		}
+
+		blockquote {
+			margin: 0;
+			margin-top: -1em;
+			padding: 40px;
+			color: #3F484D;
+			position: relative;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+		}
+		blockquote:before, blockquote:after {
+			font-size: 45px;
+			color: #3CA1D9;
+			position: absolute;
+			height: 2px;
+			left: 40px;
+			right: 40px;
+			line-height: .5;
+			background: linear-gradient(to right, #3CA1D9 45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 55%, #3CA1D9 55%);
+			font-family: serif;
+		}
+		blockquote:before {
+			content: "\201C";
+			top: 30px;
+		}
+		blockquote:after {
+			content: "\201D";
+			bottom: 30px;
+		}
+		blockquote footer {
+			margin-bottom: 1em;
+		}
+		blockquote cite {
+			font-style: normal;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			$('#arrowUp').fadeOut();
+		});
+
+		function alertClose() {
+			$('#darkBackground').fadeToggle();
+		}
+
+		window.onscroll = function() {
+			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			if (scrolled >= 150) {
+				$('#arrowUp').fadeIn('slow');
+			} else {
+				$('#arrowUp').fadeOut('slow');
+			}
+		};
+	</script>
+
+  </head>
+  <body>
+
+	<nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #9ACD32;">
+  		<div class="container-fluid">
+    		<a class="navbar-brand" href="../index.html" style="font-family: 'Galaxy Girl'; font-size: 28px">TerraБАШКОРТ</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+	    	</button>
+	    	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	      		<div class="navbar-nav" style="margin-inline-start: auto;">
+			        <a class="nav-link p-lg-3" href="../history.html">История</a>
+			        <a class="nav-link p-lg-3" href="../kulture.html">Культура</a>
+			        <a class="nav-link p-lg-3" href="../area.html">Места</a>
+			        <a class="nav-link p-lg-3" href="../numbers.html">Цифры</a>
+	      		</div>
+	    	</div>
+  		</div>
+	</nav>
+
+	<div class="container">
+
+	    <h3 class="text-center p-2">Башкортстан на рубеже XVIII века</h3>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-4" title="Башкирские дороги" src="img/DOROGA.jpg">
+
+		<p class="begin"><strong>Административное деление. </strong>С начала XVI века Башкирия называлась Уфимским Уездом и состояла из четырёх дорог: Ногайской, Осинской, Сибирской и Казанской. Каждой дорогой, состоящей из объединённых башкирских племён, управлял старейшина, член курултая (башкирского правительства). Однако в 1708 году Уфимскую губернию включили в состав Казанской. В итоге башкирский край стал воеводством, а немного позже, в 1719 году, был переименован в провинцию.<br/>
+		Когда императрицей стала Екатерина Петровна, в Башкортстане начались новые изменения: 1744 году была образована Оренбургская губерния, в которую вошли Оренбургская, Уфимская и Иссетская (Зауральская часть Башкортстана, которая отделилась в 1737 году) провинции. А в 1781 году было сформировано Уфимское наместничество, которое вновь присоединилось к Оренбургской губернии. <br/>
+		Окончательным крупным изменением XVIII века стало введение в башкирском крае <a class="alert-link" href="V_19.html">О. А. Игельстромом кантонного управления в 1798 году</a>. Таким образом, все 4 дороги перестали функционировать, а на территории Уфимского наместничества было сформировано казачье войско, потому что в те годы Оренбургская губерния была южной границей России. <br/>Кантонное управление заключалось в следующем: Уфимское наместничество делилось на 11 кантонов (юрты), которыми управляли башкирские старшины, теперь каждый мужчина в возрасте 18 лет был обязан нести 30-летнюю службу и участвовать в военных компаниях империи. Конечно же, многие не выдерживали изнурительных походов и, не дожив до конца службы, умирали; другие, пытающиеся уйти от военной повинности, были сурово наказаны; а те немногие, которые возращались домой, были далеко не молоды... <a class="alert-link" href="V_19.html">Но кантонная служба в Башкирии была полностью внедренна лишь в начале следуюшего века.</a></p>
+
+		<p><strong>Культура. </strong>Как мы знаем, в Древней Башкирии, территория которой была огромна, основным занятием народа было ведение кочевого скотоводства. Но к началу XVIII века мест для кочевания крупных табунов лошадей не осталось, теперь скотоводство постепенно уходило на второй план, уступая место земледелию. Нельзя сказать, что коневодство ушло в прошлое, башкиры в любом случае разводили лошадей, но уже не так активно.<br/>
+		На рубеже XVIII века башкирская культура переплеталась с русской, но при этом сохраняла свои традиции. Например, свой новый облик получили шежере (гомологическое дерево) и народный эпос. В литературе занял своё место народный герой Салават Юлаев: его стихотворения - основа башкирской поэзии. Немалый вклад в народную литературу внес Баик Айдар, ему пренадлежат такие произведения, как «Айтыш (состязание) Баик-сэсэна (Баик-сказатель) с казахским акыном (поэтом) Бухаром», «Обращение Баик-сэсэна к батыру Салавату», поэтическое обращение «К башкирским воинам-защитникам» и народные песни «Юрюзань», «Уҡтар аттым», «Песня Баик-сэсэна». Стоит отметить, что башкирская поэзия и проза отличалась вольным, свободолюбивым характером.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" title="Воскресенкий завод" src="img/zavod.jpg">
+
+		<p><strong> Промышленность. </strong>В 1700 году в Башкортстане был построен первый горный завод «Каменский». Это стало началом горнодобывающей промышленности башкирского края. Уже в 1740 году в Уфимской провинции было 35 заводов, из них 18 медеплавильных, 10 железоделательных и 7 чугуноплавильных. Казёнными была 1/5 всех заводов (Саралинский, Кунгурский, Уфимский и др.), остальные были частными (Давыдовский, Анцубский, Суксунский и др.). Уже к 1770 годам численность всех заводов составила 100 предприятий. Но из-за последнего крестьянского восстания 1773-1775 годов было полностью разрушено около 25 фабрик, частичному разрушению подверглись 20 заводов. В итоге, ущерб составил более 2 млн. рублей.<br/>
+		XVIII век стал началом башкирской промышленности: было построенно более ста предприятий, обнаружено около 500 новых рудников и месторождений. К сожалению, строились заводы на вотчинной земле башкир, это обстоятельство не раз приводило к новым восстаниям и в последнем из них был нанесён огромный ущерб экономике Оренбургской губернии.</p>
+
+	</div>
+	
+	<footer class="footer-bs container-fluid">
+		<div class="row">
+			<div class="col-md-3 footer-brand animated fadeInLeft">
+				<h2 class="d-sm-block d-md-none d-lg-block" style="font-family: 'Galaxy Girl'; font-size: 24px">TerraБАШКОРТ</h2>
+				<h2 class="d-md-block d-lg-none d-none" style="font-family: 'Galaxy Girl'; font-size: 16px">TerraБАШКОРТ</h2>
+				<p>Сайт, помогающий в поиске интересующей информации о Республике Башкортстан. Написан «с нуля» с использованием библиотеки Bootstrap 5.</p>
+				<p>© 2021 Bilalov A. K.</p>
+			</div>
+			<div class="col-md-4 footer-nav animated fadeInUp">
+				<h4>Меню —</h4>
+				<div class="col-md-6">
+					<ul class="pages">
+					<li><a href="../history.html">История</a></li>
+					<li><a href="../kulture.html">Культура</a></li>
+					<li><a href="../area.html">Места</a></li>
+					<li><a href="../numbers.html">Цифры</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 footer-social animated fadeInDown">
+				<h4>Подписаться в</h4>
+				<ul>
+					<li><a href="https://vk.com/id162340153">VK</a></li>
+					<li><a href="https://t.me/azat_bil">Telegram</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-ns animated fadeInRight">
+				<h4>Поиск</h4>
+				<p>Позволяет быстро найти интересующую информацию (тестовая функция)</p>
+				<p>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+						</span>
+					</div>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<a href="#" id="arrowUp" style="position: fixed; bottom: 10%; right: 10%; background-color: #0d6efd; border-radius: 50%; height: 4em; width: 4em;" onclick="">
+		<i class="fa fa-arrow-up fa-2x text-white" style="margin:25% 25%;" aria-hidden="true"></i>
+	</a>
+
+  </body>
+</html>

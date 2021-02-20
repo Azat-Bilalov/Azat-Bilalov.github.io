@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <title>TerraБАШКОРТ | Домашняя страница</title>
+	<style>
+		@font-face {
+			font-family: 'Galaxy Girl'; 
+			src: url(../Galaxy_Girl.otf); 
+		}
+		p.begin::first-letter {
+			font-size: 3em;
+			/*padding: 3px;*/
+			margin-right: 3px;
+			margin-left: -3px;
+			color: #e7685d;
+			float: left;
+			line-height: 0.3em;
+		}
+
+		.proo {
+			max-width: 40em;
+			min-width: 15em;
+			overflow: auto;
+			margin: 0 auto;
+			position: fixed;
+			top: 3ex; 
+			left: 0;
+			right: 0;
+			z-index: 999;
+		}
+
+		.footer-bs {
+			background-color: #3c3d41;
+			margin-top: 16px;
+			padding: 20px 40px;
+			color: rgba(255,255,255,1.00);
+			border-bottom-right-radius: 6px;
+		}
+		.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+		.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+		.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+		.footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+		.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+		.footer-bs .footer-nav h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+
+		.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.list li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+		.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+		.footer-bs .footer-social ul { list-style:none; padding:0px; }
+		.footer-bs .footer-social h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		.footer-bs .footer-social li { padding:5px 4px;}
+		.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+		.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+		.footer-bs .footer-ns h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+		.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		@media (min-width: 768px) {
+			.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+		}
+
+		blockquote {
+			margin: 0;
+			margin-top: -1em;
+			padding: 40px;
+			color: #3F484D;
+			position: relative;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+		}
+		blockquote:before, blockquote:after {
+			font-size: 45px;
+			color: #3CA1D9;
+			position: absolute;
+			height: 2px;
+			left: 40px;
+			right: 40px;
+			line-height: .5;
+			background: linear-gradient(to right, #3CA1D9 45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 55%, #3CA1D9 55%);
+			font-family: serif;
+		}
+		blockquote:before {
+			content: "\201C";
+			top: 30px;
+		}
+		blockquote:after {
+			content: "\201D";
+			bottom: 30px;
+		}
+		blockquote footer {
+			margin-bottom: 1em;
+		}
+		blockquote cite {
+			font-style: normal;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			$('#arrowUp').fadeOut();
+		});
+
+		function alertClose() {
+			$('#darkBackground').fadeToggle();
+		}
+
+		window.onscroll = function() {
+			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			if (scrolled >= 150) {
+				$('#arrowUp').fadeIn('slow');
+			} else {
+				$('#arrowUp').fadeOut('slow');
+			}
+		};
+	</script>
+
+  </head>
+  <body>
+
+	<nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #9ACD32;">
+  		<div class="container-fluid">
+    		<a class="navbar-brand" href="../index.html" style="font-family: 'Galaxy Girl'; font-size: 28px">TerraБАШКОРТ</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+	    	</button>
+	    	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	      		<div class="navbar-nav" style="margin-inline-start: auto;">
+			        <a class="nav-link p-lg-3" href="../history.html">История</a>
+			        <a class="nav-link p-lg-3" href="../kulture.html">Культура</a>
+			        <a class="nav-link p-lg-3" href="../area.html">Места</a>
+			        <a class="nav-link p-lg-3" href="../numbers.html">Цифры</a>
+	      		</div>
+	    	</div>
+  		</div>
+	</nav>
+
+	<div class="container">
+
+	    <h3 class="text-center p-2">Башкирия в составе Русского царства</h3>
+
+		<p class="begin"><strong>Причины разделение Золотой орды.</strong> Наступил XVI век, Золотая Орда разделилась на новые ханства. Исторический Башкорстан разделили между собой Ногайская Орда, Казанское и Сибирское ханства. Мы не можем пройти стороной события, произошедшие между разделённой Золотой Орды (к тому времени такого понятия, как "Золотая Орда" уже не существовало).</p>
+
+		<img src="img/Bash.jpg" class="img-fluid rounded-3 border border-primary d-block m-auto mb-2">
+
+		<p>Почему распалась империя Чингисхана? Борьба за власть погубила Золотую Орду, ведь каждый потомок (их было не мало!) хотел получить свою часть империи. Вот она и разделилась на части. Первая причина: <strong>oбщего правителя не было.</strong><br/>Во-вторых, территория, которую контролирова Золотая Орда, готова была пойти на восстание, а междоусобные войны среди наследников мешали их подавлению. Это вторая причина: <strong>неспособность контролировать территории.</strong><br/>Есть и другие причины распада империи, но обсуждать их смысла большого нет.</p>
+
+		<p>Ослаблением Золотой Орды воспользовалась Россия, которая долгое время выплачивала дань монголам. Надо сказать, что тогдашняя Россия также была раздроблена, также были междоусобные войны между русскими князьями. Ранее, при Дмитрии Донским, нанёсшим поражение монголо-татарам, была попытка выйти из под «опеки» татар, но и дальше Русское княжество была под татаро-монгольским игом.<br/>
+		Через 100 лет, на престол взошёл Иван III. В 1476 году он перестал платить дань монголам.</p>
+
+		<blockquote>Красивая, но неправдивая легенда рассказывает, как это произошло. Приняв Ордынское посольство, великий князь растоптал басму и отправил в Орду предупреждение, что с ними такое же случится, если не оставят в покое его страну. Разъяренный хан Ахмед, собрав большое войско, двинулся на Москву, желая ее покарать за непослушание. Примерно в 150 км от Москвы у реки Угры на калужских землях осенью стали напротив два войска. Русское возглавлял сын Василия, Иван Молодой. Иван III вернулся в Москву и стал осуществлять поставки для армии – продовольствие, фураж. Так и стояли войска напротив друг друга, пока не подошла ранняя зима с бескормицей и не похоронила все планы Ахмеда. Монголы развернулись и ушли в Орду, признав поражение. Так бескровно произошло окончание монголо-татарского ига.</blockquote>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" src="img/Ivan.jpg" title="Иван Грозный в Казани">
+
+		<p><strong>Присоединение к России.</strong> Наступил 1452 год, 100-тысячное войско Российского Царства под предводительсвом своего царя Ивана IV (из истории Грозного) разгромило Казанское ханство. Следующей целью царя были башкиры. Именно к ним он отправил послов после взятия татарской столицы. Башкирам было предложено добровольно войти в состав Российского Царства. «<i>Платите мне то же, что вы платили монгольским ханам</i>», - по данным летописи, сказал Иван IV. Вожди 7 башкирских племён, потом и остальные, приняли предложение царя, но поставили ему условие:«<i>Не трогать вотчинную землю (т. е. наследственную землю), местное самоуправление (т. е. власть вождей) и религию</i>». Иван IV принял условие и башкирские земли вошли в состав Российского царства. Хочется заметить, что все условия башкир Аҡ-патша («Белый царь» - так называли Ивана IV башкиры) выполнил: никто на башкирскую землю кроме государственных наместников не заселялся, вожди сохранили свою власть (также некоторые из них были пожалованы в князья) и религия, которая за века монгольского ига стала <strong>исламом</strong>, сохранилась. Последнее немало важно, ведь многих казанских татар насильно крестили.</p>
+
+		<p><strong>Культура.</strong> На самом деле, нахождение под контролем монголо-татар для башкир стало развитием их культуры. Об этом говорит прежде всего распространение арабской письменности. Но не это самое важное в культурном развитии, самое важное - у башкирского народа появилась своя письменность, возникновение свой письменной истории. Также продолжалась развиваться самобытная художественная литература, отличительной особенностью которой является традиционные жанры устного народного творчества: эпосы, легенды, песни. Многие из них («Урал Батыр», «Акбузат») возникли в глубокой древности, некоторые в золотоордынские времена («Кузый Курпяс и Маянхылу», «Алдар и Зухра»).</p>
+
+		<p><strong>Вывод.</strong> В период XIV-XV веков деление по племенам среди башкир всё меньше выражалось, все исторические события сподвигли башкирский народ к объединению и единствую</p>
+
+	</div>
+
+	<footer class="footer-bs container-fluid">
+		<div class="row">
+			<div class="col-md-3 footer-brand animated fadeInLeft">
+				<h2 class="d-sm-block d-md-none d-lg-block" style="font-family: 'Galaxy Girl'; font-size: 24px">TerraБАШКОРТ</h2>
+				<h2 class="d-md-block d-lg-none d-none" style="font-family: 'Galaxy Girl'; font-size: 16px">TerraБАШКОРТ</h2>
+				<p>Сайт, помогающий в поиске интересующей информации о Республике Башкортстан. Написан «с нуля» с использованием библиотеки Bootstrap 5.</p>
+				<p>© 2021 Bilalov A. K.</p>
+			</div>
+			<div class="col-md-4 footer-nav animated fadeInUp">
+				<h4>Меню —</h4>
+				<div class="col-md-6">
+					<ul class="pages">
+					<li><a href="../history.html">История</a></li>
+					<li><a href="../kulture.html">Культура</a></li>
+					<li><a href="../area.html">Места</a></li>
+					<li><a href="../numbers.html">Цифры</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 footer-social animated fadeInDown">
+				<h4>Подписаться в</h4>
+				<ul>
+					<li><a href="https://vk.com/id162340153">VK</a></li>
+					<li><a href="https://t.me/azat_bil">Telegram</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-ns animated fadeInRight">
+				<h4>Поиск</h4>
+				<p>Позволяет быстро найти интересующую информацию (тестовая функция)</p>
+				<p>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+						</span>
+					</div>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<a href="#" id="arrowUp" style="position: fixed; bottom: 10%; right: 10%; background-color: #0d6efd; border-radius: 50%; height: 4em; width: 4em;" onclick="">
+		<i class="fa fa-arrow-up fa-2x text-white" style="margin:25% 25%;" aria-hidden="true"></i>
+	</a>
+	
+  </body>
+</html>

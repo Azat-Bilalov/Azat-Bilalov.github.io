@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <title>TerraБАШКОРТ | Домашняя страница</title>
+	<style>
+		@font-face {
+			font-family: 'Galaxy Girl'; 
+			src: url(../Galaxy_Girl.otf); 
+		}
+		p.begin::first-letter {
+			font-size: 3em;
+			/*padding: 3px;*/
+			margin-right: 3px;
+			margin-left: -3px;
+			color: #e7685d;
+			float: left;
+			line-height: 0.3em;
+		}
+
+		.proo {
+			max-width: 40em;
+			min-width: 15em;
+			overflow: auto;
+			margin: 0 auto;
+			position: fixed;
+			top: 3ex; 
+			left: 0;
+			right: 0;
+			z-index: 999;
+		}
+
+		.footer-bs {
+			background-color: #3c3d41;
+			margin-top: 16px;
+			padding: 20px 40px;
+			color: rgba(255,255,255,1.00);
+			border-bottom-right-radius: 6px;
+		}
+		.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+		.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+		.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+		.footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+		.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+		.footer-bs .footer-nav h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+
+		.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.list li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+		.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+		.footer-bs .footer-social ul { list-style:none; padding:0px; }
+		.footer-bs .footer-social h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		.footer-bs .footer-social li { padding:5px 4px;}
+		.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+		.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+		.footer-bs .footer-ns h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+		.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		@media (min-width: 768px) {
+			.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+		}
+
+		blockquote {
+			margin: 0;
+			margin-top: -1em;
+			padding: 40px;
+			color: #3F484D;
+			position: relative;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+		}
+		blockquote:before, blockquote:after {
+			font-size: 45px;
+			color: #3CA1D9;
+			position: absolute;
+			height: 2px;
+			left: 40px;
+			right: 40px;
+			line-height: .5;
+			background: linear-gradient(to right, #3CA1D9 45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 55%, #3CA1D9 55%);
+			font-family: serif;
+		}
+		blockquote:before {
+			content: "\201C";
+			top: 30px;
+		}
+		blockquote:after {
+			content: "\201D";
+			bottom: 30px;
+		}
+		blockquote footer {
+			margin-bottom: 1em;
+		}
+		blockquote cite {
+			font-style: normal;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			$('#arrowUp').fadeOut();
+		});
+
+		function alertClose() {
+			$('#darkBackground').fadeToggle();
+		}
+
+		window.onscroll = function() {
+			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			if (scrolled >= 150) {
+				$('#arrowUp').fadeIn('slow');
+			} else {
+				$('#arrowUp').fadeOut('slow');
+			}
+		};
+	</script>
+
+  </head>
+  <body>
+
+	<nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #9ACD32;">
+  		<div class="container-fluid">
+    		<a class="navbar-brand" href="../index.html" style="font-family: 'Galaxy Girl'; font-size: 28px">TerraБАШКОРТ</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+	    	</button>
+	    	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	      		<div class="navbar-nav" style="margin-inline-start: auto;">
+			        <a class="nav-link p-lg-3" href="../history.html">История</a>
+			        <a class="nav-link p-lg-3" href="../kulture.html">Культура</a>
+			        <a class="nav-link p-lg-3" href="../area.html">Места</a>
+			        <a class="nav-link p-lg-3" href="../numbers.html">Цифры</a>
+	      		</div>
+	    	</div>
+  		</div>
+	</nav>
+
+	<div class="container">
+	    <h3 class="text-center p-2">Древние башкиры</h3>
+
+		<p class="begin">В исторической литературе IX – X вв. появляются первые упоминания о племенах Южного Урала. Башкиры впервые были упомянуты в сочинениях Саллама Тарджемана (IX век). Он написал отчёт о путешествии 842-847 года, целью которого было отыскание легендарной страны Гога и Магога.
+		Экспедиция Саллама Тарджемана втретила башкир в 27 днях пути от города в устье реки Волги. Правда подлинник труда Саллама Тарджемана не сохранился, однако мы о нём знаем из рассказов его современников. К примеру, Ибн-Хордадбек заявлял, что автор передал свой отчёт ему лично, поэтому сомневаться в недоставерности сведеней Саллама Тарджемана не стоит.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" src="img/BD.jpg">
+
+		<p>В 922 г. В составе посольства Багдадского халифата в Волжскую Булгарию через страну башкир проезжал Ибн-Фадлан. Согласно его описанию, посольство долго ехало через страну огузо-кыпчаков (степи Приаралья), а затем, в районе нынешнего г.Уральска, оно переправилось через р. Яик и сразу же вступило в «страну башкир из числа тюрков». 
+		В ней арабы переправились через такие реки как Кинель, Ток, Соран, а за р. Большой Черемшан начинались уже пределы государства Волжская Булгария. Ибн-Фадлан в своем труде не уточняет границы страны башкир, но этот пробел восполняется его современником Истахри, который знает о башкирах , обитающих к востоку от булгар, в горно-лесных районах, следовательно, на Южном Урале.
+		Архиологогические раскопки подтвердили, что арабы, в соответствии с описанием Ибн-Фадлана, посещали эти места.</p>
+
+		<p><strong>Башкирский этнос.</strong> Башкирская этнографическая наука обязана труду С. И. Руденко: он в своём труде "Башкиры" осветил многие вопросы, касательно охвата многогранной жизни башкирского народа. Руденко повсюду подчёркивает сложный многосоставный характер быта, искусства, религиозных представлений, также сохранились яркие следы былых этно-культурных древних башкир с предками современных народов Средней азии, Сибири (казахи, киргизы, туркмены, алтайцы, ханты и другие) и Восточной Европы (татары, мишари, удмурты). Башкиры предсталяли единую группу племён-кочевников.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" src="img/Sholk.jpg">
+
+		<p><strong>Культура и род занятий.</strong> Сложно представить, что у предков современных башкир было своё металлургическое производство и, естественно, свои базы добычи металла. Среди древних башкир были кузнецы высокого класса, способные создавать оружие и драгоценные украшения. 
+		Также культурно-экономичесткие отношения башкирских племен IX-XII вв. со своими соседями носили характер торгово-денежных. Например, архиологические раскопки говорят о том, что, благодаря торговли с соседями из Средней Азии, башкиры получили роскошные согдийские шелка.</p>
+	    <p><strong>Религия. </strong>Ибн-Фадлан в своих записях делал выводы о башкирской религии, их отдельная группа покланялась своему божеству - в целом он зафиксировал двенадцать культов башкир, в том числе: зимы, лета, дождя, ветра, деревьев, людей, лошади, воды, ночи, дня, смерти, земли.</p>
+
+		<blockquote>
+			<p>Одна группа покланялась журавлям. Мне сообщили, что они (башкиры) вели войну с людьми, из числа своих врагов. Враг оказался сильнее и обратил башкир в бегство. В этот момент журавли закричали за врагом, тот испугался и сам обратился в бегство. 
+			Поэтому башкиры стали покланяться журавлям и говорить:«Журавли — наш господь, так как он обратил в бегство врагов». За это они им и покланяются.</p>
+			<footer><i>Ибн-Фадлан</i> о башкирах</footer>
+		</blockquote>
+
+		<p>Такая религия называется язычеством, а оно в свою очередь тесно связано с шаманизмом. Такое верование и было у башкир в начале Х века, правда шаманизм становился всё менее выраженным.</p>
+
+	</div>
+
+	<footer class="footer-bs container-fluid">
+		<div class="row">
+			<div class="col-md-3 footer-brand animated fadeInLeft">
+				<h2 class="d-sm-block d-md-none d-lg-block" style="font-family: 'Galaxy Girl'; font-size: 24px">TerraБАШКОРТ</h2>
+				<h2 class="d-md-block d-lg-none d-none" style="font-family: 'Galaxy Girl'; font-size: 16px">TerraБАШКОРТ</h2>
+				<p>Сайт, помогающий в поиске интересующей информации о Республике Башкортстан. Написан «с нуля» с использованием библиотеки Bootstrap 5.</p>
+				<p>© 2021 Bilalov A. K.</p>
+			</div>
+			<div class="col-md-4 footer-nav animated fadeInUp">
+				<h4>Меню —</h4>
+				<div class="col-md-6">
+					<ul class="pages">
+					<li><a href="../history.html">История</a></li>
+					<li><a href="../kulture.html">Культура</a></li>
+					<li><a href="../area.html">Места</a></li>
+					<li><a href="../numbers.html">Цифры</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 footer-social animated fadeInDown">
+				<h4>Подписаться в</h4>
+				<ul>
+					<li><a href="https://vk.com/id162340153">VK</a></li>
+					<li><a href="https://t.me/azat_bil">Telegram</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-ns animated fadeInRight">
+				<h4>Поиск</h4>
+				<p>Позволяет быстро найти интересующую информацию (тестовая функция)</p>
+				<p>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+						</span>
+					</div>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<a href="#" id="arrowUp" style="position: fixed; bottom: 10%; right: 10%; background-color: #0d6efd; border-radius: 50%; height: 4em; width: 4em;" onclick="">
+		<i class="fa fa-arrow-up fa-2x text-white" style="margin:25% 25%;" aria-hidden="true"></i>
+	</a>
+
+  </body>
+</html>

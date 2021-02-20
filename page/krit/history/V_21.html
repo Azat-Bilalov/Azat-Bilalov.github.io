@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <title>TerraБАШКОРТ | Домашняя страница</title>
+	<style>
+		@font-face {
+			font-family: 'Galaxy Girl'; 
+			src: url(../Galaxy_Girl.otf); 
+		}
+		p.begin::first-letter {
+			font-size: 3em;
+			/*padding: 3px;*/
+			margin-right: 3px;
+			margin-left: -3px;
+			color: #e7685d;
+			float: left;
+			line-height: 0.3em;
+		}
+
+		.proo {
+			max-width: 40em;
+			min-width: 15em;
+			overflow: auto;
+			margin: 0 auto;
+			position: fixed;
+			top: 3ex; 
+			left: 0;
+			right: 0;
+			z-index: 999;
+		}
+
+		.footer-bs {
+			background-color: #3c3d41;
+			margin-top: 16px;
+			padding: 20px 40px;
+			color: rgba(255,255,255,1.00);
+			border-bottom-right-radius: 6px;
+		}
+		.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+		.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+		.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+		.footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+		.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+		.footer-bs .footer-nav h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+
+		.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.list li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+		.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+		.footer-bs .footer-social ul { list-style:none; padding:0px; }
+		.footer-bs .footer-social h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		.footer-bs .footer-social li { padding:5px 4px;}
+		.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+		.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+		.footer-bs .footer-ns h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+		.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		@media (min-width: 768px) {
+			.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+		}
+
+		blockquote {
+			margin: 0;
+			margin-top: -1em;
+			padding: 40px;
+			color: #3F484D;
+			position: relative;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+		}
+		blockquote:before, blockquote:after {
+			font-size: 45px;
+			color: #3CA1D9;
+			position: absolute;
+			height: 2px;
+			left: 40px;
+			right: 40px;
+			line-height: .5;
+			background: linear-gradient(to right, #3CA1D9 45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 55%, #3CA1D9 55%);
+			font-family: serif;
+		}
+		blockquote:before {
+			content: "\201C";
+			top: 30px;
+		}
+		blockquote:after {
+			content: "\201D";
+			bottom: 30px;
+		}
+		blockquote footer {
+			margin-bottom: 1em;
+		}
+		blockquote cite {
+			font-style: normal;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			$('#arrowUp').fadeOut();
+		});
+
+		function alertClose() {
+			$('#darkBackground').fadeToggle();
+		}
+
+		window.onscroll = function() {
+			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			if (scrolled >= 150) {
+				$('#arrowUp').fadeIn('slow');
+			} else {
+				$('#arrowUp').fadeOut('slow');
+			}
+		};
+	</script>
+
+  </head>
+  <body>
+
+	<nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #9ACD32;">
+  		<div class="container-fluid">
+    		<a class="navbar-brand" href="../index.html" style="font-family: 'Galaxy Girl'; font-size: 28px">TerraБАШКОРТ</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+	    	</button>
+	    	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	      		<div class="navbar-nav" style="margin-inline-start: auto;">
+			        <a class="nav-link p-lg-3" href="../history.html">История</a>
+			        <a class="nav-link p-lg-3" href="../kulture.html">Культура</a>
+			        <a class="nav-link p-lg-3" href="../area.html">Места</a>
+			        <a class="nav-link p-lg-3" href="../numbers.html">Цифры</a>
+	      		</div>
+	    	</div>
+  		</div>
+	</nav>
+
+	<div class="container">
+
+	    <h3 class="text-center p-2">Республика Башкортстан и её путь развития в XXI веке</h3>
+
+		<p class="begin">Переход от социализма к капитализму внёс свои коррективы в развитие республики. Например, преследуемые Советской властью, религии с распадом СССР вновь вернулись в РБ (как и во всю Россию), а вот нефтянную промышленность Башкортстан активно развивает ещё с советских времён. Давайте рассмотрим отрасли, которые имеют непосредственное влияние в современной Башкирии.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" src="img/Neft_Provod.jpg" title="Нефтепроводы РБ">
+
+		<p><strong>Промышленность. </strong>Основной отраслью промышленности края является добыча и переработка нефти. В начале 30-х годов Советы решили продвигать добычу полезных ископаемых в крае, и уже 16 мая 1932 года в Ишимбае был добыт первый литр чёрного золота. По сравнению с 1970 годами (рекордные 45 миллионов тон!) добыча нефти понизилась и достигла всего 11 миллионов тон, таким образом, РБ занял 7 место (1970 году БАССР была на втором) среди регионов России. Несмотря на это, нефтепереработка в Башкортстане является одной из крупнейшей в Федерации, а также в Европе.<br/>
+		Кроме того, Башкортстан представлен весьма развитой отраслью машиностроения. Например, в Уфе производят авиационные двигатели и троллейбусы, в Нефтекамске автобусы, в Ишимбае Вездеходы, а вертолёты строятся в Кумертау. Меньшее распрастранение в республике получили деревообработывающие и металлообрабатывающие отрасли промышленности.</p>
+
+		<p><strong>Наука и образование. </strong>С приходом Советской власти началось внедрение образования в Башкирию: колличество школ увеличивалось, а число неграмотных сократилось до нуля. Также большим шагом в развитии науки стало открытие Академии наук БАССР в 1991 году. В научных достижениях генетики и биологии в целом известны имена: Нажип Валитов (Взаимодействие химических веществ, органическая химия) М. С. Юнусова (Органическая химия),  Г. А. Толстикова (биологический катализ и синтез); в математике и физике:  А. Ф. Леонтьева (теория о функции комплекстной переменной), Р. И. Нигматуллина; башкирский этнос и история:  Р. З. Янгузин, С. Ф. Касимов.</p>
+
+		<blockquote>
+			<p>Прежде считалось, что никакое взаимодействие не может совершаться со скоростью, превышающей скорость света, - рассказывает о своем открытии профессор валитов. - Это триста тысяч километров в секунду. Но оказалось, что электромагнитные и гравитационные поля взаимодействуют мгновенно.
+			Я обосновал это теоретически и подтвердил экспериментально. А потом поразился - ведь это говорит о существовании во вселенной какой-то единой высшей силы! Ведь, по сути, все связано со всем».<br/>
+			Папа Римский написал Нажипу Хатмулловичу из Ватикана! Можно сказать, что открытие учёного доказало существование самого Бога. Усомнившись в выводах, коллеги подсчитали: теория профессора валитова опровергает 12 законов термодинамики, 20 разделов химии, 28 разделов физики, 40 разделов механики. Валитов вновь свои расчеты проверил. И не нашел ошибок. Потом предложил проверить свои выводы научным оппонентам. И они не смогли их опровергнуть.<br/>
+			Вскоре вновьпришло письмо от Папы, в нём говорилось:«Дорогой профессор! Его преосвященство папа Иоанн Павел второй уверяет вас, что он посвящает вам свои молитвы, - пишет автору монографии нажипу Хатмулловичу валитову один из помощников и экспертов папы римского. - Он желает также, чтобы вы знали, что первосвященник ценит чувства, побудившие вас написать эту монографию. Только после тщательного исследования и солидной экспертизы мы решили прислать вам нашу благодарность».</p>
+			<footer>Башкирский учёный Нажил Валитов</footer>
+		</blockquote>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" src="img/HAC.png" title="Соотношение населения РБ">
+
+		<p><strong>Население. </strong>По данным на 2019 год число населения Башкортстана 4,05 миллионов человек, благодаря чему край занимает первое место по колличеству жителей среди республик России. Плотность населения 28,3 человека на квадратный километр, из него 60% проживает в городе (половина (30%) в Уфе).<br/>
+		Национальный состав Башкортостана согласно Всероссийской переписи населения 2010 года: русские — 36,1%, башкиры — 29,5%, татары — 25,4%, чуваши — 2,7%, марийцы — 2,6%, украинцы — 1%, лица других национальностей — 2,7%. Всего в республике проживают представители 160 национальностей.</p>
+
+		<p><strong>Перспективы развития. </strong>В настоящее время вся инфраструктура и экономика Башкирии держится на нефтепереработке. Безусловно, республика закрепилась на российском рынке, благодаря своей качественной обработке чёрного золота. Но, к сожалению, свои собственные месторождения истощены, а необходимое плезное ископаемое завозится из других регионов РФ. С одной стороны нефть стабильно поддерживает экономику края, но с другой стабильно ли? Башкортстан должен развивать другие отрасли промышленности, которые доступны на данной территории. Иначе, при нехватке нефти, начнётся кризис башкирской экономики.</p>
+	
+	<footer class="footer-bs container-fluid">
+		<div class="row">
+			<div class="col-md-3 footer-brand animated fadeInLeft">
+				<h2 class="d-sm-block d-md-none d-lg-block" style="font-family: 'Galaxy Girl'; font-size: 24px">TerraБАШКОРТ</h2>
+				<h2 class="d-md-block d-lg-none d-none" style="font-family: 'Galaxy Girl'; font-size: 16px">TerraБАШКОРТ</h2>
+				<p>Сайт, помогающий в поиске интересующей информации о Республике Башкортстан. Написан «с нуля» с использованием библиотеки Bootstrap 5.</p>
+				<p>© 2021 Bilalov A. K.</p>
+			</div>
+			<div class="col-md-4 footer-nav animated fadeInUp">
+				<h4>Меню —</h4>
+				<div class="col-md-6">
+					<ul class="pages">
+					<li><a href="../history.html">История</a></li>
+					<li><a href="../kulture.html">Культура</a></li>
+					<li><a href="../area.html">Места</a></li>
+					<li><a href="../numbers.html">Цифры</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 footer-social animated fadeInDown">
+				<h4>Подписаться в</h4>
+				<ul>
+					<li><a href="https://vk.com/id162340153">VK</a></li>
+					<li><a href="https://t.me/azat_bil">Telegram</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-ns animated fadeInRight">
+				<h4>Поиск</h4>
+				<p>Позволяет быстро найти интересующую информацию (тестовая функция)</p>
+				<p>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+						</span>
+					</div>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<a href="#" id="arrowUp" style="position: fixed; bottom: 10%; right: 10%; background-color: #0d6efd; border-radius: 50%; height: 4em; width: 4em;" onclick="">
+		<i class="fa fa-arrow-up fa-2x text-white" style="margin:25% 25%;" aria-hidden="true"></i>
+	</a>
+
+  </body>
+</html>

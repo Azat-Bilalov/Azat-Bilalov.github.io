@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <title>TerraБАШКОРТ | Домашняя страница</title>
+	<style>
+		@font-face {
+			font-family: 'Galaxy Girl'; 
+			src: url(../Galaxy_Girl.otf); 
+		}
+		p.begin::first-letter {
+			font-size: 3em;
+			/*padding: 3px;*/
+			margin-right: 3px;
+			margin-left: -3px;
+			color: #e7685d;
+			float: left;
+			line-height: 0.3em;
+		}
+
+		.proo {
+			max-width: 40em;
+			min-width: 15em;
+			overflow: auto;
+			margin: 0 auto;
+			position: fixed;
+			top: 3ex; 
+			left: 0;
+			right: 0;
+			z-index: 999;
+		}
+
+		.footer-bs {
+			background-color: #3c3d41;
+			margin-top: 16px;
+			padding: 20px 40px;
+			color: rgba(255,255,255,1.00);
+			border-bottom-right-radius: 6px;
+		}
+		.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+		.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+		.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+		.footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+		.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+		.footer-bs .footer-nav h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+
+		.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.list li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+		.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+		.footer-bs .footer-social ul { list-style:none; padding:0px; }
+		.footer-bs .footer-social h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		.footer-bs .footer-social li { padding:5px 4px;}
+		.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+		.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+		.footer-bs .footer-ns h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+		.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		@media (min-width: 768px) {
+			.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+		}
+
+		blockquote {
+			margin: 0;
+			margin-top: -1em;
+			padding: 40px;
+			color: #3F484D;
+			position: relative;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+		}
+		blockquote:before, blockquote:after {
+			font-size: 45px;
+			color: #3CA1D9;
+			position: absolute;
+			height: 2px;
+			left: 40px;
+			right: 40px;
+			line-height: .5;
+			background: linear-gradient(to right, #3CA1D9 45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 55%, #3CA1D9 55%);
+			font-family: serif;
+		}
+		blockquote:before {
+			content: "\201C";
+			top: 30px;
+		}
+		blockquote:after {
+			content: "\201D";
+			bottom: 30px;
+		}
+		blockquote footer {
+			margin-bottom: 1em;
+		}
+		blockquote cite {
+			font-style: normal;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			$('#arrowUp').fadeOut();
+		});
+
+		function alertClose() {
+			$('#darkBackground').fadeToggle();
+		}
+
+		window.onscroll = function() {
+			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			if (scrolled >= 150) {
+				$('#arrowUp').fadeIn('slow');
+			} else {
+				$('#arrowUp').fadeOut('slow');
+			}
+		};
+	</script>
+
+  </head>
+  <body>
+
+	<nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #9ACD32;">
+  		<div class="container-fluid">
+    		<a class="navbar-brand" href="../index.html" style="font-family: 'Galaxy Girl'; font-size: 28px">TerraБАШКОРТ</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+	    	</button>
+	    	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	      		<div class="navbar-nav" style="margin-inline-start: auto;">
+			        <a class="nav-link p-lg-3" href="../history.html">История</a>
+			        <a class="nav-link p-lg-3" href="../kulture.html">Культура</a>
+			        <a class="nav-link p-lg-3" href="../area.html">Места</a>
+			        <a class="nav-link p-lg-3" href="../numbers.html">Цифры</a>
+	      		</div>
+	    	</div>
+  		</div>
+	</nav>
+
+	<div class="container">
+
+	    <h3 class="text-center p-2">Башкорстан в конце XVI начале XVII века</h3>
+
+	    <img class="img-fluid rounded-3 border border-primary d-block m-auto mb-4" src="img/Ufa_Kreml.jpg" title="Уфимская крепость (кремль)">
+
+		<p class="begin"><strong>Строительство Уфы.</strong> После присоединения территории нынешнего Башкорстана, необходимо было эту территорию защитить. Для этого башкирами было отправлена просьба о строительстве нового города-крепости. Стоит заметить, что строился не совсем новый город «с нуля», ещё до него на этом же месте стоял древний город Тура-тау («Турова гора»). Название произошло от имени нагайского Тура хана, резеденция которого находилась в этом городе. По некоторым предположениям, ещё в I веке нашей эры на месте Туратая был город Башкорт, однако это только предположение. Была ещё одна причина потребности в постройке нового города: с башкирской территории собирался ясак (дань), потом отвозился в Казань, ближний крупный город, а уже оттуда в Москву. Во-первых, территория башкир-качевников не маленькая, во-вторых, до Казани ехать туда и обратно невероятно долго. Теперь потребность в столичном городе-крепости, я думаю, понятна.</p>     
+		<p>На новое строительство царём было дано добро, и в 1574 началось возведения новой крепости - Уфы. Из Москвы на башкирскую землю был отправлен воевода Иван Нагой и 200 стрельцов. По началу был построен кремль: несколько башен (Михайловская, Никольская и Наугольная), военная концелярия, дом воеводы и Смоленский собор. Основное строительтво шло около 10 лет. Постепенно начали строиться новые дома вокруг центра, и военная крепость всё больше напоминала город.</p>
+		
+		<blockquote>
+			<p>Была шутка:«Поднимались два человека в гору. Один тяжёло вздохнул:«Уф-ф...» Другой не раслышал и спросил:«А?» Так получил своё название город». Всё это, конечно, шутка, но если задуматься, откуда такое название? Одни считают, что «Уфа» произошло от башкирского «уба» («холм»). Другие говорят, что «Уфа» - это слово с доисторического племенного языка означает своего тотемного животного. Одна из наиболее распространённых гипотез: «Уфа-Идель», ныне «Кара-Идель» («Чёрная река»), гораздо темнее чем река Белая («Ак-Идель»). И это название «Уфа» получил город, постоенный на «Чёрной реке».</p>
+			<footer>
+				<a class="alert-link" href="https://bash-news.ru/104287-ufa-otkuda-gorod-poluchil-svoe-nazvanie-i-chto-ono-oznachaet.html" target="_blank">Легенда</a>
+			</footer>
+		</blockquote>
+
+		<p><strong>Заселение Башкортстана.</strong> В 1584 году умер Иван IV (Грозный). Царём стал его сын Фёдор Иоаннович, который был очень слаб, и вскоре, через 14 лет умер. Власть перешла к Борису Годунову. Из истории мы знаем, что народ не признавал незаконного царя, о чём свидетельсвует начало Смутного времени. О нём есть информация в шежере (родословной) башкир:«<i>Пришли голодные годы. Зимы были долгие. За три года лошади и овцы вымерли. Зерновые не уродились</i>». В годы борьбы за власть Лжедмитрия I и Лжедмитрия II (со стороны Польши) башкиры активно поддерживали Минина и Пожарского, о чём также свидетельствует шежере.<br/>
+		Когда, в 1613 году, закончилась смута, царствовать начал Михаил Романов и народ наконец смог вздохнуть спокойно, началось активное заселение башкирской территории. Множество людей занимали уральские степи, которые, по их мнению, не кому не принадлежали. Таким образом договор, заключённый между башкирскими вождями и Иваном IV, был нарушен.<br/>
+		Что произошло с башкирами? Естественно, под давлением русских, а также массы чувашей, татар, марийцев, удмуртов башкиры переселялись к востоку, бежали в Закамье, Приуралье, в Сибирь. На смену старым традициям приходили новые, русские обычаи. Однако нельзя сказать, что башкиры забыли о своих традициях, скорее русские нормы повлияли на башкирские в той или иной степени.</p>
+
+		<p><strong>Заключение. </strong>После заселения башкирской территории, коренной народ вытеснялся. Среди башкир уже не было племенного деления, теперь народ стал единым. Можно сказать, что именно в это время появился башкирский народ, в это время заканчивал своё формирование этнос.<br/>В прежние века башкиры занимались скотоводством, пчеловодством, а теперь род деятельности кординально менялся, ведь всё меньше становилось территории для разведения животных; всё больше территории использовали под посевные участки.</p>
+
+	</div>
+
+	<footer class="footer-bs container-fluid">
+		<div class="row">
+			<div class="col-md-3 footer-brand animated fadeInLeft">
+				<h2 class="d-sm-block d-md-none d-lg-block" style="font-family: 'Galaxy Girl'; font-size: 24px">TerraБАШКОРТ</h2>
+				<h2 class="d-md-block d-lg-none d-none" style="font-family: 'Galaxy Girl'; font-size: 16px">TerraБАШКОРТ</h2>
+				<p>Сайт, помогающий в поиске интересующей информации о Республике Башкортстан. Написан «с нуля» с использованием библиотеки Bootstrap 5.</p>
+				<p>© 2021 Bilalov A. K.</p>
+			</div>
+			<div class="col-md-4 footer-nav animated fadeInUp">
+				<h4>Меню —</h4>
+				<div class="col-md-6">
+					<ul class="pages">
+					<li><a href="../history.html">История</a></li>
+					<li><a href="../kulture.html">Культура</a></li>
+					<li><a href="../area.html">Места</a></li>
+					<li><a href="../numbers.html">Цифры</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 footer-social animated fadeInDown">
+				<h4>Подписаться в</h4>
+				<ul>
+					<li><a href="https://vk.com/id162340153">VK</a></li>
+					<li><a href="https://t.me/azat_bil">Telegram</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-ns animated fadeInRight">
+				<h4>Поиск</h4>
+				<p>Позволяет быстро найти интересующую информацию (тестовая функция)</p>
+				<p>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+						</span>
+					</div>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<a href="#" id="arrowUp" style="position: fixed; bottom: 10%; right: 10%; background-color: #0d6efd; border-radius: 50%; height: 4em; width: 4em;" onclick="">
+		<i class="fa fa-arrow-up fa-2x text-white" style="margin:25% 25%;" aria-hidden="true"></i>
+	</a>
+
+  </body>
+</html>

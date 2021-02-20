@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <title>TerraБАШКОРТ | Домашняя страница</title>
+	<style>
+		@font-face {
+			font-family: 'Galaxy Girl'; 
+			src: url(../Galaxy_Girl.otf); 
+		}
+		p.begin::first-letter {
+			font-size: 3em;
+			/*padding: 3px;*/
+			margin-right: 3px;
+			margin-left: -3px;
+			color: #e7685d;
+			float: left;
+			line-height: 0.3em;
+		}
+
+		.proo {
+			max-width: 40em;
+			min-width: 15em;
+			overflow: auto;
+			margin: 0 auto;
+			position: fixed;
+			top: 3ex; 
+			left: 0;
+			right: 0;
+			z-index: 999;
+		}
+
+		.footer-bs {
+			background-color: #3c3d41;
+			margin-top: 16px;
+			padding: 20px 40px;
+			color: rgba(255,255,255,1.00);
+			border-bottom-right-radius: 6px;
+		}
+		.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+		.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+		.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+		.footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+		.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+		.footer-bs .footer-nav h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+
+		.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.list li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+		.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+		.footer-bs .footer-social ul { list-style:none; padding:0px; }
+		.footer-bs .footer-social h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		.footer-bs .footer-social li { padding:5px 4px;}
+		.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+		.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+		.footer-bs .footer-ns h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+		.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		@media (min-width: 768px) {
+			.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+		}
+
+		blockquote {
+			margin: 0;
+			margin-top: -1em;
+			padding: 40px;
+			color: #3F484D;
+			position: relative;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+		}
+		blockquote:before, blockquote:after {
+			font-size: 45px;
+			color: #3CA1D9;
+			position: absolute;
+			height: 2px;
+			left: 40px;
+			right: 40px;
+			line-height: .5;
+			background: linear-gradient(to right, #3CA1D9 45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 55%, #3CA1D9 55%);
+			font-family: serif;
+		}
+		blockquote:before {
+			content: "\201C";
+			top: 30px;
+		}
+		blockquote:after {
+			content: "\201D";
+			bottom: 30px;
+		}
+		blockquote footer {
+			margin-bottom: 1em;
+		}
+		blockquote cite {
+			font-style: normal;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			$('#arrowUp').fadeOut();
+		});
+
+		function alertClose() {
+			$('#darkBackground').fadeToggle();
+		}
+
+		window.onscroll = function() {
+			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			if (scrolled >= 150) {
+				$('#arrowUp').fadeIn('slow');
+			} else {
+				$('#arrowUp').fadeOut('slow');
+			}
+		};
+	</script>
+
+  </head>
+  <body>
+
+	<nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #9ACD32;">
+  		<div class="container-fluid">
+    		<a class="navbar-brand" href="../index.html" style="font-family: 'Galaxy Girl'; font-size: 28px">TerraБАШКОРТ</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+	    	</button>
+	    	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	      		<div class="navbar-nav" style="margin-inline-start: auto;">
+			        <a class="nav-link p-lg-3" href="../history.html">История</a>
+			        <a class="nav-link p-lg-3" href="../kulture.html">Культура</a>
+			        <a class="nav-link p-lg-3" href="../area.html">Места</a>
+			        <a class="nav-link p-lg-3" href="../numbers.html">Цифры</a>
+	      		</div>
+	    	</div>
+  		</div>
+	</nav>
+
+	<div class="container">
+
+	    <h3 class="text-center p-2">XIX век в Башкирии</h3>
+
+		<p class="begin">В XIX веке произошло 2 крупных события: кантонное управление, Отечественная война 1812-1816 годов. Давайте рассмотрим их более подробно.</p>
+
+		<img style="width: 35%" src="img/Kantons.png" class="img-fluid rounded-3 border border-primary d-block m-auto mb-2">
+
+		<p><strong>Кантонное управление. </strong>10 апреля 1778 года бывший глава Уфимского наместничества Игельстром ввёл кантонную систему в Башкирии. Это стало первым опытом России в подобной военной формы управления, ведь кантонная система действовала весьма успешно в Австро-Венгрии и Пруссии (Германии).<br/>
+		Теперь территория Оренбургской губернии делилась на 24 кантона, из них 11 башкирских (в 1805 году был добавлен 12-й кантон). Каждый мужчина в возрасте 18 лет был обязан нести 30-летнюю военную службу, а с 1805 года помимо солдатской службы было необходимо строить дороги и мосты, заготавливать лес, укреплять пограничные линии. В то время у Российской империи была большая потребность в кантонном управлении: во-первых, Оренбургская губерния была самой южной границей страны, которой требовалась надёжная защита; во-вторых, была необходимость в контроле башкирской территории, на которой неоднократно вспыхивали восстания.<br/>
+		Когда в России был присоединён Казахстан, потребность в кантонном управлении Оренбургской губернии исчезла. Таким обязан, в 1865 году все кантоны были упразднены и башкирский народ получил права свободных сельских жителей (новое сословие).<br/>
+		Хотя кантонная система использовалась только в первой половине XIX века, она оставила глубокий отпечаток на культурной жизни башкир. Из-за данной формы управления, всё башкирское население жёстко контролировалось царской полицией и русскими чиновниками, в конце концов в 1834 году вспыхнуло восстание, в котором приняли участие, как башкирское, так и русское крестьянство. По причине неорганизованности, мятеж был быстро подавлен графом Перовским, повстанцы жестоко наказаны (пытка и отправка в Сибирь). Несмотря на то что восстание было неудачным, некоторые права на свободу башкирам удалось сохранить.</p>
+
+		<p><strong>Отечественная война 1812 и заграничный поход. </strong>Башкиры принимали активное участие в Отечественной войне против Наполеона. В Российской компании принимало участие 28 башкирских полков (500 воинов в каждом), а также башкирским правительством было выделено около 4,2 тысяч лошадей.<br/>
+		Известен случай в Сражении под Бородином. Французы, обрушев на наш горнизон крупные силы, захватили батарею Раевского. Генерал Ермолов с батальёном Уфимского полка и Оренбургским драгунским полком остановил защитников батареи и повёл их в контратаку - французы были отбросаны. Активное участие в Бородинском сражении принял генерал Платов с донскими казаками и башкирской конницой: его полк дествовал во французком тылу, сея панику в рядах противника.<br/>
+		Также башкирские полки отличились в бою под Лейпцингом, проявив мужество и героизм, при разгроме войск Наполеона. В Битве Народов (Сражении под Лейпцингом) французы прозвали башкир «северными амурами», позже Кутузов благодарил воинов за доблесть в бою. На тему Отечественной войны были написаны песни «Кутузов», «Эскадрон», «Кахым туря», «Любизар» и многие другие.</p>
+
+		<audio controls style="width: 50%; margin-left: 25%;">
+			<source src="img/Lubizar.mp3">
+		</audio>
+
+		<blockquote>
+			<p>– А знаете, - спросил Гёте с таинственной улыбкой, когда Эккерман закончил свой рассказ, - у меня, кажется, есть одна вещица, которая вас порадует. Что если мы сейчас спустимся вниз, и в руках у вас окажется настоящий башкирский лук?<br/>	
+			— Башкирский лук? – воскликнул я вне себя от восторга, — Самый настоящий?<br/>
+			— Да, сумасбродный вы человек, самый настоящий, — сказал Гёте».<br/>
+			И из какой-то хозяйственной постройки в своем саду поэт извлек старый лук. «Вот он. Все такой же, каким был в 1814 году, когда мне торжественно преподнес его начальник башкирского отряда».</p>
+			<footer>Из воспоминаний <i>Эккермана</i></footer>
+			<p>Кто бы еще несколько лет назад мог предвидеть, что в аудитории нашей протестантской гимназии будет совершаться магометанская служба и читаться суры Корана. Но это произошло, и мы присутствовали на башкирской службе, видели их муллу и приветствовали их князя в театре. В виде особой чести мне преподнесли лук и стрелы, которые я, на вечную память, повешу над очагом.</p>
+			<footer>Запись из дневника <i>Гёте</i> от 5 января 1814 года</footer>
+		</blockquote>
+
+	</div>
+
+	<footer class="footer-bs container-fluid">
+		<div class="row">
+			<div class="col-md-3 footer-brand animated fadeInLeft">
+				<h2 class="d-sm-block d-md-none d-lg-block" style="font-family: 'Galaxy Girl'; font-size: 24px">TerraБАШКОРТ</h2>
+				<h2 class="d-md-block d-lg-none d-none" style="font-family: 'Galaxy Girl'; font-size: 16px">TerraБАШКОРТ</h2>
+				<p>Сайт, помогающий в поиске интересующей информации о Республике Башкортстан. Написан «с нуля» с использованием библиотеки Bootstrap 5.</p>
+				<p>© 2021 Bilalov A. K.</p>
+			</div>
+			<div class="col-md-4 footer-nav animated fadeInUp">
+				<h4>Меню —</h4>
+				<div class="col-md-6">
+					<ul class="pages">
+					<li><a href="../history.html">История</a></li>
+					<li><a href="../kulture.html">Культура</a></li>
+					<li><a href="../area.html">Места</a></li>
+					<li><a href="../numbers.html">Цифры</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 footer-social animated fadeInDown">
+				<h4>Подписаться в</h4>
+				<ul>
+					<li><a href="https://vk.com/id162340153">VK</a></li>
+					<li><a href="https://t.me/azat_bil">Telegram</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-ns animated fadeInRight">
+				<h4>Поиск</h4>
+				<p>Позволяет быстро найти интересующую информацию (тестовая функция)</p>
+				<p>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+						</span>
+					</div>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<a href="#" id="arrowUp" style="position: fixed; bottom: 10%; right: 10%; background-color: #0d6efd; border-radius: 50%; height: 4em; width: 4em;" onclick="">
+		<i class="fa fa-arrow-up fa-2x text-white" style="margin:25% 25%;" aria-hidden="true"></i>
+	</a>
+
+  </body>
+</html>

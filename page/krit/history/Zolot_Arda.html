@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <title>TerraБАШКОРТ | Домашняя страница</title>
+	<style>
+		@font-face {
+			font-family: 'Galaxy Girl'; 
+			src: url(../Galaxy_Girl.otf); 
+		}
+		p.begin::first-letter {
+			font-size: 3em;
+			/*padding: 3px;*/
+			margin-right: 3px;
+			margin-left: -3px;
+			color: #e7685d;
+			float: left;
+			line-height: 0.3em;
+		}
+
+		.proo {
+			max-width: 40em;
+			min-width: 15em;
+			overflow: auto;
+			margin: 0 auto;
+			position: fixed;
+			top: 3ex; 
+			left: 0;
+			right: 0;
+			z-index: 999;
+		}
+
+		.footer-bs {
+			background-color: #3c3d41;
+			margin-top: 16px;
+			padding: 20px 40px;
+			color: rgba(255,255,255,1.00);
+			border-bottom-right-radius: 6px;
+		}
+		.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+		.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+		.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+		.footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+		.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+		.footer-bs .footer-nav h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+
+		.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.list li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+		.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+		.footer-bs .footer-social ul { list-style:none; padding:0px; }
+		.footer-bs .footer-social h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		.footer-bs .footer-social li { padding:5px 4px;}
+		.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+		.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+		.footer-bs .footer-ns h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+		.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		@media (min-width: 768px) {
+			.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+		}
+
+		blockquote {
+			margin: 0;
+			margin-top: -1em;
+			padding: 40px;
+			color: #3F484D;
+			position: relative;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+		}
+		blockquote:before, blockquote:after {
+			font-size: 45px;
+			color: #3CA1D9;
+			position: absolute;
+			height: 2px;
+			left: 40px;
+			right: 40px;
+			line-height: .5;
+			background: linear-gradient(to right, #3CA1D9 45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 55%, #3CA1D9 55%);
+			font-family: serif;
+		}
+		blockquote:before {
+			content: "\201C";
+			top: 30px;
+		}
+		blockquote:after {
+			content: "\201D";
+			bottom: 30px;
+		}
+		blockquote footer {
+			margin-bottom: 1em;
+		}
+		blockquote cite {
+			font-style: normal;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			$('#hellojury').fadeOut();
+			$('#arrowUp').fadeOut();
+			$('#hellojury').fadeIn(2000);
+		});
+
+		function alertClose() {
+			$('#darkBackground').fadeToggle();
+		}
+
+		window.onscroll = function() {
+			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			if (scrolled >= 150) {
+				$('#arrowUp').fadeIn('slow');
+			} else {
+				$('#arrowUp').fadeOut('slow');
+			}
+		};
+	</script>
+
+  </head>
+  <body>
+
+	<nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #9ACD32;">
+  		<div class="container-fluid">
+    		<a class="navbar-brand" href="../index.html" style="font-family: 'Galaxy Girl'; font-size: 28px">TerraБАШКОРТ</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+	    	</button>
+	    	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	      		<div class="navbar-nav" style="margin-inline-start: auto;">
+			        <a class="nav-link p-lg-3" href="../history.html">История</a>
+			        <a class="nav-link p-lg-3" href="../kulture.html">Культура</a>
+			        <a class="nav-link p-lg-3" href="../area.html">Места</a>
+			        <a class="nav-link p-lg-3" href="../numbers.html">Цифры</a>
+	      		</div>
+	    	</div>
+  		</div>
+	</nav>
+
+	<div class="container">
+
+	    <h3 class="text-center p-2">Башкирские племена и татаро-монгольские захватчики</h3>
+
+		<p class="begin">По писменным сведеньям, первая встреча башкир и татаро-монголами произошла в 1210-1211 годах. К этому времени соседние территории были захвачены: Южная Сибирь (1207-1208 - первые походы), Си Ся (Тангустское государство - 1208-1209), Китай (1211-1215), Казахстан, Средняя Азия. Нынешнее Поволжье было следующей целью захватчиков.</p>
+
+		<img src="img/ZO.jpg" class="img-fluid rounded-3 border border-primary d-block m-auto mb-2">
+
+		<p>В своих рассказах о поездке в страну башкир в 1236 году вергенский монах Юлиан писал, что значительная часть башкир была покорена монголам в период 1214-1220 годов. Потвердить когда начался захват точно нельзя, ведь он мог начаться ещё в 1207, когда монголы впервые напали на Южную Сибирь. Историк Гумилёв относит захват к 1220-1235 годам, 
+		не отрицая, однако, что оно могло начаться в 20 годы XI века. Башкиры оказывали сопротивление, но оно всегда заканчивалось поражением. Был необходим другой метод.</p>
+	    <p>Насчёт монголо-татар у башкир сохранилось следующее предание:«<i>Это было летом, когда весь народ находился в летовках (летних пастбищах), горах и долинах рек. Война только своим краешком затронула башкир. В основном она прошла южнее, по Яику (реке Урал)</i>». Скорее всего между завоевателями и покорёнными башкирами был заключён мирный договор о союзе и дружбе, а после него основные силы башкир были использованы в дальнейшив военных походах.</p>
+
+		<p>Факт о мирном договоре потверждает не только Юлиан, но и башкирские источники, а именно: шежере (родословная) племени усерган. В нём повествуется о Муйтен бие, который от имени башкир с большими подарками ездил к Чингисхану, добился его расположения, за что был прозван «башкорт халкы бабасы» («отец башкирского народа»).</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" src="img/KZO.jpg">
+
+		<p><strong>Башкортстан в составе Золотой Орды. </strong>Монголы хотели создать новую Мировую империю, которая должна быть военно-организована, то есть на захваченной территории поддерживалась жёсткая дисциплина, а те, кто нарушал её сурово наказывались. Монголо-татар отличала особенная жестокость к восставшим, к захваченному народу...<br /> 
+		Печальна история Волжской Болгарии, которая находилась недалеко от территории башкирских племён. Взять её монголам с первого раза не удалось, в 1229 году они повторили попытку (желание продемонстрировать всё свою мощь против непокорных народов), однако и она была безуспешна. Волжская Болгария сопротивлялась, а территория нынешней республики стало местом нескольких сражений (башкиры принимали в них активное участие). Но силы монгол были велики и Волжская Болгаря пала, а столица Болгар была сожжена. Несколько раз её пытались востановить, но монголо-татары не допускали этого.</p>
+
+		<p>Что касается касается самих башкир: они, конечно же, хотели освободиться, об этом повествуют многочисленные легенды (например, <a class="alert-link" target="_blank"  href="http://башкирская-энциклопедия.рф/2-statya/870-khungy-khartaj.html">«Һуңғы Һартай»</a>). С каждого башкирского племени монголы собирали налоги, были организованы суды, в которых карали за повинность. В башкирском обществе в роли крупных феодалов выступали родо-племенные вожди, именно через них проводились важные договоры с монголо-татарами.</p>
+
+		<p><strong>Новая культура. </strong>Произошли серьёзные перемены в культурном плане. Во-первых, изменился этнос, конечно, не глобально, но перемены произошли. Это случилось, потому что монголы поделили условно новую территорию, на которую вполне могли переселиться другие покорённые народы (не на всё территорию), в этом плане территория башкир хоть и перешла к захватчикам, всё равно сохраняла целостность. Во-вторых, монголо-татары принесли новую религию - ислам, поэтому язычество постепенно стало отодвигаться. 
+		Об этом свидетельствует уменьшение количества курганов (захоронений), где умерших хоронили языческим способом, то есть вместе с вещами.</p>
+
+		<p>Так длилось время (более 200 лет): Золотая Орда в какие-то моменты набирала силу, в какие-то теряла (связано со смертью Чингисхана в 1227 и сорой между его потомками), потом вовсе в середине XV века распалась на 5 основных Ханств (Казанское 1438, Астраханское 1459, Крымское 1443, Сибирское конец XV века, Нагайская начало XV века и другие).</p>
+	
+	</div>
+
+	<footer class="footer-bs container-fluid">
+		<div class="row">
+			<div class="col-md-3 footer-brand animated fadeInLeft">
+				<h2 class="d-sm-block d-md-none d-lg-block" style="font-family: 'Galaxy Girl'; font-size: 24px">TerraБАШКОРТ</h2>
+				<h2 class="d-md-block d-lg-none d-none" style="font-family: 'Galaxy Girl'; font-size: 16px">TerraБАШКОРТ</h2>
+				<p>Сайт, помогающий в поиске интересующей информации о Республике Башкортстан. Написан «с нуля» с использованием библиотеки Bootstrap 5.</p>
+				<p>© 2021 Bilalov A. K.</p>
+			</div>
+			<div class="col-md-4 footer-nav animated fadeInUp">
+				<h4>Меню —</h4>
+				<div class="col-md-6">
+					<ul class="pages">
+					<li><a href="../history.html">История</a></li>
+					<li><a href="../kulture.html">Культура</a></li>
+					<li><a href="../area.html">Места</a></li>
+					<li><a href="../numbers.html">Цифры</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 footer-social animated fadeInDown">
+				<h4>Подписаться в</h4>
+				<ul>
+					<li><a href="https://vk.com/id162340153">VK</a></li>
+					<li><a href="https://t.me/azat_bil">Telegram</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-ns animated fadeInRight">
+				<h4>Поиск</h4>
+				<p>Позволяет быстро найти интересующую информацию (тестовая функция)</p>
+				<p>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+						</span>
+					</div>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<a href="#" id="arrowUp" style="position: fixed; bottom: 10%; right: 10%; background-color: #0d6efd; border-radius: 50%; height: 4em; width: 4em;" onclick="">
+		<i class="fa fa-arrow-up fa-2x text-white" style="margin:25% 25%;" aria-hidden="true"></i>
+	</a>
+
+  </body>
+</html>
