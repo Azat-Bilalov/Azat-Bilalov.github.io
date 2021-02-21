@@ -1,110 +1,322 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
-    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
-    <script src="JS.js"></script>
-    <title>Спорт респулики</title>
-	<link rel="stylesheet" type="text/css" href="../style.css">
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <title>TerraБАШКОРТ | Домашняя страница</title>
+	<style>
+		@font-face {
+			font-family: 'Galaxy Girl'; 
+			src: url(../Galaxy_Girl.otf); 
+		}
+		p.begin::first-letter {
+			font-size: 3em;
+			/*padding: 3px;*/
+			margin-right: 3px;
+			margin-left: -3px;
+			color: #e7685d;
+			float: left;
+			line-height: 0.3em;
+		}
+
+		.proo {
+			max-width: 40em;
+			min-width: 15em;
+			overflow: auto;
+			margin: 0 auto;
+			position: fixed;
+			top: 3ex; 
+			left: 0;
+			right: 0;
+			z-index: 999;
+		}
+
+		.footer-bs {
+			background-color: #3c3d41;
+			margin-top: 16px;
+			padding: 20px 40px;
+			color: rgba(255,255,255,1.00);
+			border-bottom-right-radius: 6px;
+		}
+		.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+		.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+		.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+		.footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+		.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+		.footer-bs .footer-nav h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+
+		.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.list li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+		.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+		.footer-bs .footer-social ul { list-style:none; padding:0px; }
+		.footer-bs .footer-social h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		.footer-bs .footer-social li { padding:5px 4px;}
+		.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+		.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+		.footer-bs .footer-ns h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+		.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		@media (min-width: 768px) {
+			.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+		}
+
+		blockquote {
+			margin: 0;
+			margin-top: -1em;
+			padding: 40px;
+			color: #3F484D;
+			position: relative;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+		}
+		blockquote:before, blockquote:after {
+			font-size: 45px;
+			color: #3CA1D9;
+			position: absolute;
+			height: 2px;
+			left: 40px;
+			right: 40px;
+			line-height: .5;
+			background: linear-gradient(to right, #3CA1D9 45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 55%, #3CA1D9 55%);
+			font-family: serif;
+		}
+		blockquote:before {
+			content: "\201C";
+			top: 30px;
+		}
+		blockquote:after {
+			content: "\201D";
+			bottom: 30px;
+		}
+		blockquote footer {
+			margin-bottom: 1em;
+		}
+		blockquote cite {
+			font-style: normal;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			$('#arrowUp').fadeOut();
+		});
+
+		function alertClose() {
+			$('#darkBackground').fadeToggle();
+		}
+
+		window.onscroll = function() {
+			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			if (scrolled >= 150) {
+				$('#arrowUp').fadeIn('slow');
+			} else {
+				$('#arrowUp').fadeOut('slow');
+			}
+		};
+	</script>
+
   </head>
   <body>
-	<div class="wrapper">
-		<div class="menu">
-			<div class="menu-but"></div>
-			<div class="menu-list">
-				<div class = ""><a href="../history.html" title="История РБ">История</a></div>
-				<div class = ""><a href="../kulture.html" title="Культура РБ">Культура</a></div>
-				<div class = ""><a href="../area.html" title="Красивые места РБ">Места</a></div>
-				<div class = "" title="РБ с научной точки зрения"><a href="../numbers">Цифры</a></div>
+
+	<nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #9ACD32;">
+  		<div class="container-fluid">
+    		<a class="navbar-brand" href="../index.html" style="font-family: 'Galaxy Girl'; font-size: 28px">TerraБАШКОРТ</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+	    	</button>
+	    	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	      		<div class="navbar-nav" style="margin-inline-start: auto;">
+			        <a class="nav-link p-lg-3" href="../history.html">История</a>
+			        <a class="nav-link p-lg-3" href="../kulture.html">Культура</a>
+			        <a class="nav-link p-lg-3" href="../area.html">Места</a>
+			        <a class="nav-link p-lg-3" href="../numbers.html">Цифры</a>
+	      		</div>
+	    	</div>
+  		</div>
+	</nav>
+
+	<div class="container">
+
+	    <h3 class="text-center p-2">Спорт республики Башкортстан</h3>
+
+		<div class="list-group mb-5 mt-3">
+			<a class="list-group-item list-group-item-action" href="#Хоккей">Хоккей</a>
+			<a class="list-group-item list-group-item-action" href="#Борьба">Борьба (Курәш)</a>
+			<a class="list-group-item list-group-item-action" href="#Футбол">Футбол</a>
+			<a class="list-group-item list-group-item-action" href="#Биатлон">Горнолыжный спорт</a>
+			<a class="list-group-item list-group-item-action" href="#Волебол">Волейбол</a>
+		</div>
+
+		<p class="begin">Башкирский спорт получил большое развитие во второй половине XX века. С тех пор спортсмены края не раз достигали невероятных результатов, совершенствуя свои навыки. Давайте рассмотрим виды спорта, в которых Башкортстан преуспел.</p>
+
+		<p id="Хоккей"><strong>Хоккей. </strong>Хоккейный клуб "Салават Юлаев" основан в 1961 году. Свой первый матч команда провела на турнире в Свердловской области.<br/>
+		Перед сезоном 1961/1962 был приглашен челябинский тренер Владимир Штырков. 8 из 19 игроков команды были игроки уфимского клуба "Труд". Свой первый матч в <abbr title="Низшая Лига">классе "Б"</abbr> уфимцы сыиграли 25 ноября 1961 года в Челябинске, где проиграли "Металлургу" 1:3, ныне эта команда называется "Челмет". К сведенью, в класс А (Высшую Лигу) хоккейсты республики попали в 1979 году.<br/>
+		У Салавата Юлаева много достижений, таких как:</p>
+
+		<ul class="list-group list-group-flush mb-4">
+			<li class="list-group-item">Дважды чемпион России(2007/2008; 2010/2011)</li>
+			<li class="list-group-item">Обладатель кубка "Гагарина"(2010/2011)</li>
+			<li class="list-group-item">Дважды обладатель кубка "открытия"(2008/2009; 2011/2012)</li>
+			<li class="list-group-item">Обладатель кубка "континента"(2009/2010)</li>
+		</ul>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" title="ХК «Салават Юлаев»" src="img/Салават_Юлаев.jpg">
+
+		<p>Также у "Салавата Юлаева" очень много знаменитых воспитанников, ставшие впоследствии заслуженными мастерами спорта:</p>
+
+		<ul class="list-group list-group-flush mb-4">
+			<li class="list-group-item">Ирек Гимаев</li>
+			<li class="list-group-item">Сергей Гимаев</li>
+			<li class="list-group-item">Игорь Кравчук</li>
+			<li class="list-group-item">Александр Семак</li>
+		</ul>
+
+		<p>Кроме того, есть  мастера спорта международного класса, это:</p>
+
+		<ul class="list-group list-group-flush mb-4">
+			<li class="list-group-item">Денис Афиногенов</li>
+			<li class="list-group-item">Михаил Анферов</li>
+			<li class="list-group-item">Сергей Бушмелёв</li>
+			<li class="list-group-item">Сергей Гомоляко</li>
+			<li class="list-group-item">Анатолий Емелин</li>
+		</ul>
+
+		<p>Сейчас "Салават Юлаев" играет в Континентальной хоккейной лиге Восточной конференции, в дивизионе Чернышева. Домашняя арена-УСА "Уфа арена" вместимостью на 8070 человек.</p>
+		<p>Также в систему уфимского клуба входят такие команды, как "Толпар", "Торос" и "Агидель". Немного о них:<br/>
+		Хоккейный клуб "Толпар" выступает в молодежной хоккейной лиге восточной конференции. До 2009 года хоккейный клуб носил название "Салават Юлаев 2". "Толпар" бронзовый призер чемпионата <abbr title="Межконтинентальная хоккейная Лига">МХЛ</abbr> 2009/2010; 2010/2011, а также серебряный призер кубка мира молодёжных клубных команд 2014 года. Сейчас "Толпар" играет во дворце спорта "Салават Юлаев", вместимостью 3501 человек.<br/>
+		Хоккейный клуб "Торос" города Нефтекамск основан а 1988 году. Выступает в высшей хоккейной лиге. "Торос" обладатель кубка "картины" (2011/2012; 2012/2013; 2014/2015), а также кубка "открытия" (2010; 2012; 2013). Домашняя арена - "Нефтекамский ледовый" дворец вместимостью 2000 человек.<br/>
+		"Агидель" женский хоккейный клуб из Уфы, играющий в женской хоккейной лиге и основанный 31 августа 2010 года.</p>
+
+		<blockquote>
+			<p>Интересный факт: "Агидель" провела свой первый матч 23 сентября 2010 года в гостях, против "Скиф", проиграв матч со счетом 26:0. В своём первом сезоне клуб так и не смог победить ни одного матча из 30. За эти матчи "Агидель" забросила 22 шайбы и пропустила 288.</p>
+		</blockquote>
+
+		<p>"Агидель" бронзовый призер чемпионата <abbr title="Женская хоккейная Лига">ЖХЛ</abbr> (2011/2012; 2012/2013; 2013/2014; 2014/2015), а также серебряный призер (2015/2016; 2016/2017) и чемпион 2017/2018. Домашняя арена - дворец спорта "Салават Юлаев" вместимостью 3501 человек.</p>
+
+
+		<p id="Борьба"><strong>Борьба на поясах (Курәш). </strong>Курәш на территории республики существовал с древних времён, ещё до присоединения Башкирии к России. Предположительно, данный вид борьбы пришёл с исламом (в годы монгольского нашествия), который не утратил своей популярности до сих пор.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" title="" src="img/Курәш.jpeg">
+
+		<p>Соревнования по борьбе на поясах проходят на сабантуях и других народных праздниках. Основные правила борьбы:</p>
+
+		<ul class="list-group list-group-flush mb-4">
+			<li class="list-group-item">Борьба проходит в стойке стоя. Все броски, выполненные в стойке, оценивают судьи</li>
+			<li class="list-group-item">Если оценки соперников равны, победу присуждают по последней оценке</li>
+			<li class="list-group-item">Если участником (участницей) получена как оценка, так и наказание, преимущество отдается оценке</li>
+			<li class="list-group-item">Состязания проводят по олимпийской системе, утешительные схватки отсутствуют</li>
+			<li class="list-group-item">В Курәше проводят оценку приёмам, которые были начаты внутри безопасной территории татами и завершены за границами опасной линии татами</li>
+		</ul>
+
+		<p>С 1948 года ежегодно проводились чемпионаты Башкирии. В Башкортостане действует около 70 отделений по курәшу в спортивных школах, где на 2012 год занимались свыше 12 тысяч человек. Воспитанники спортивных школ республики многократно становились чемпионами РСФСР, России и Мира, победителями Кубка мира и других международных соревнований. С 1966 года функционирует Федерация по национальной борьбе — курәш Республики Башкортостан.</p>
+
+		<p id="Футбол"><strong>Футбол. </strong>активно развиваться футбол начал только с 2010 года. Конечно, существовали футбольные команды ещё в далёком начале  XX века: это сборная команда Уфы (1909), Стерлитамак (1912), Белебее (1922) и других городах края. Даже в 1913 году футбольная команда Уфы заняла I место в первом Чемпионате Урала по футболу, а позже, в 1923 году, бронзовым призёром олимпиады Поволжья. Однако, в СССР башкирский футбол развития не получил.<br/>
+		С распадом Советского Союза постепенно футбол начал внедряться в спорт республики: в 1997 году создаётся Федерация футбола Республики Башкортостан, через 3 года Ассоциация женского футбола. <abbr title="Футбольный клуб">ФК</abbr> "Уфа" был основан только в 2010 году.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" title="ФК «Уфа»" src="https://s-cdn.sportbox.ru/images/styles/upload/fp_fotos/72/52/0d53a9caf26273560a4db92f419146bf5b031e0510119134769007.jpg">
+
+		<p>Заняли II место заняли в зоне "Урал-Поволжье" (2011/2012), IV место в Футбольной Национальной Лиге (2012/2014). Благодаря таким успешным матчам клуб вошёл в Премьер-Лигу (Высшая Лига в РФ). Стадион команды - "Нефтяник" вместимость 15 200 человек.<br/>
+		Помимо Уфы, у других городов республики есть свои ФК: это "Горняк" из Учалов, "Нефтяник" из Ишимбая и "Содовик" и Стерлитамака (один из первых - основан в 1961).</p>
+
+		<p id="Биатлон"><strong>Горнолыжный спорт. </strong>Биатлон в Башкирии набрал популярность ещё при СССР, причиной этому стало активное внедрение его в БАССР в середине XX века. Таким образом, В 1987 году в Уфе была открыта Спортивная школа олимпийского резерва по биатлону. С 2000 года функционирует Федерация биатлонистов Республики Башкортостан.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" title="" src="img/Летний_биатлон.jpg">
+
+		<p>Башкирский комплекс «Биатлон» в Уфе, построенный в 1986 году (реконструирован в 2001), стал одним из крупнейших сооружений по биатлону в РФ, из-за чего в  нём прошли:</p>
+
+		<ul class="list-group list-group-flush mb-4">
+			<li class="list-group-item">Чемпионаты мира по летнему биатлону (2006, 2012)</li>
+			<li class="list-group-item">Чемпионат европы по биатлону (2009)</li>
+			<li class="list-group-item">Чемпионаты России по биатлону</li>
+		</ul>
+
+		<p>Из республики немало олимпийских чемпионов и призёров по биатлону:</p>
+
+		<ul class="list-group list-group-flush mb-4">
+			<li class="list-group-item">Куклева Галина</li>
+			<li class="list-group-item">Вилухина Ольга</li>
+			<li class="list-group-item">Муслимов Павел</li>
+			<li class="list-group-item">Чудов Максим</li>
+		</ul>
+
+		<p id="Волейбол"><strong>Волебол. </strong>Первые школы по волейболу открылись с в 1920-е годы. Но дальнейшего развития спорт так и не получил.<br/>
+		С распадом СССР В Уфе были сформированы первые волейбольные клубы: это уфимский клуб "Урал" (1992), "Буревестники" (основан в 1970, начал развиваться в 90-е годы; нынешнее название:"Уфимочка-УГНТУ"), салаватский "Нефтехимик" (1996), позже стерлитамакский "СпортАкадемия-ВРЗ" (2005).</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" title="Победа «Урала» над «Новой»" src="img/ВК_Урал.jpg">
+
+		<p>"Урал" является участником Суперлиги (Чемпионат РФ, или Высшая Лига). Стал финалистом в европейском Кубке вызова, и серебренным призёром Суперлиги (2012/2013).<br/>
+		Женский волейбольный клуб "Уфимочка-УГНТУ" стал чемпионом в Высшей Лиге в 2012 году. Клуб "Нефтехимик" вошёл состав Высшей Лиге в 2005 году.</p>
+
+	</div>
+
+	<footer class="footer-bs container-fluid">
+		<div class="row">
+			<div class="col-md-3 footer-brand animated fadeInLeft">
+				<h2 class="d-sm-block d-md-none d-lg-block" style="font-family: 'Galaxy Girl'; font-size: 24px">TerraБАШКОРТ</h2>
+				<h2 class="d-md-block d-lg-none d-none" style="font-family: 'Galaxy Girl'; font-size: 16px">TerraБАШКОРТ</h2>
+				<p>Сайт, помогающий в поиске интересующей информации о Республике Башкортстан. Написан «с нуля» с использованием библиотеки Bootstrap 5.</p>
+				<p>© 2021 Bilalov A. K.</p>
+			</div>
+			<div class="col-md-4 footer-nav animated fadeInUp">
+				<h4>Меню —</h4>
+				<div class="col-md-6">
+					<ul class="pages">
+					<li><a href="../history.html">История</a></li>
+					<li><a href="../kulture.html">Культура</a></li>
+					<li><a href="../area.html">Места</a></li>
+					<li><a href="../numbers.html">Цифры</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 footer-social animated fadeInDown">
+				<h4>Подписаться в</h4>
+				<ul>
+					<li><a href="https://vk.com/id162340153">VK</a></li>
+					<li><a href="https://t.me/azat_bil">Telegram</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-ns animated fadeInRight">
+				<h4>Поиск</h4>
+				<p>Позволяет быстро найти интересующую информацию (тестовая функция)</p>
+				<p>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+						</span>
+					</div>
+				</p>
 			</div>
 		</div>
-	</div>
-    <header>
-      <div class = "title"><strong><a href="../index.html" class="title" title="Главная страница">100 лет Башкорстану</a></strong></div>
-	  <div class = "history"><a href="../history.html" title="История РБ">История</a></div>
-	  <div class = "kulture"><a href="../kulture.html" title="Культура РБ">Культура</a></div>
-	  <div class = "area"><a href="../area" title="Красивые места РБ">Места</a></div>
-	  <div class = "numbers" title="РБ с научной точки зрения"><a href="../numbers.html">Цифры</a></div>
-	</header>
-    <h1>Спорт республики Башкортстан</h1>
-	<h3>Содержание:</h3>
-		<ul>
-			<li><a href="#Хоккей">Хоккей</a>
-			<li><a href="#Борьба">Борьба (Курәш)</a>
-			<li><a href="#Футбол">Футбол</a>
-			<li><a href="#Биатлон">Горнолыжный спорт</a>
-			<li><a href="#Волебол">Волейбол</a>
-		</ul>
-	</nav>
-	<p class="start">Башкирский спорт получил большое развитие во второй половине XX века. С тех пор спортсмены края не раз достигали невероятных результатов, совершенствуя свои навыки. Давайте рассмотрим виды спорта, в которых Башкортстан преуспел.</p>
-	<p id="Хоккей"><img class="minimized" title="ХК «Салават Юлаев»" style="height: 300px" src="img/Салават_Юлаев.jpg"><strong>Хоккей. </strong>Хоккейный клуб "Салават Юлаев" основан в 1961 году. Свой первый матч команда провела на турнире в Свердловской области.<br/>
-	Перед сезоном 1961/1962 был приглашен челябинский тренер Владимир Штырков. 8 из 19 игроков команды были игроки уфимского клуба "Труд". Свой первый матч в <abbr title="Низшая Лига">классе "Б"</abbr> уфимцы сыиграли 25 ноября 1961 года в Челябинске, где проиграли "Металлургу" 1:3, ныне эта команда называется "Челмет". К сведенью, в класс А (Высшую Лигу) хоккейсты республики попали в 1979 году.<br/>
-	У Салавата Юлаева много достижений, таких как:
-	<ul style="border: none; color: #e7685d; width: 70%;">
-			<li>Дважды чемпион России(2007/2008; 2010/2011)
-			<li>Обладатель кубка "Гагарина"(2010/2011)
-			<li>Дважды обладатель кубка "открытия"(2008/2009; 2011/2012)
-			<li>Обладатель кубка "континента"(2009/2010)
-	</ul></p>
-	<p>Также у "Салавата Юлаева" очень много знаменитых воспитанников, ставшие впоследствии заслуженными мастерами спорта:
-	<ul style="border: none; color: #e7685d; width: 70%;">
-			<li>Ирек Гимаев
-			<li>Сергей Гимаев
-			<li>Игорь Кравчук
-			<li>Александр Семак
-	</ul></p>
-	<p>Кроме того, есть  мастера спорта международного класса, это:
-	<ul style="border: none; color: #e7685d; width: 70%;">
-			<li>Денис Афиногенов
-			<li>Михаил Анферовв
-			<li>Сергей Бушмелёв
-			<li>Сергей Гомоляко
-			<li>Анатолий Емелин
-	</ul></p>
-	<p>Сейчас "Салават Юлаев" играет в Континентальной хоккейной лиге Восточной конференции, в дивизионе Чернышева. Домашняя арена-УСА "Уфа арена" вместимостью на 8070 человек.</p>
-	<p>Также в систему уфимского клуба входят такие команды, как "Толпар", "Торос" и "Агидель". Немного о них:<br/>
-	Хоккейный клуб "Толпар" выступает в молодежной хоккейной лиге восточной конференции. До 2009 года хоккейный клуб носил название "Салават Юлаев 2". "Толпар" бронзовый призер чемпионата <abbr title="Межконтинентальная хоккейная Лига">МХЛ</abbr> 2009/2010; 2010/2011, а также серебряный призер кубка мира молодёжных клубных команд 2014 года. Сейчас "Толпар" играет во дворце спорта "Салават Юлаев", вместимостью 3501 человек.<br/>
-	Хоккейный клуб "Торос" города Нефтекамск основан а 1988 году. Выступает в высшей хоккейной лиге. "Торос" обладатель кубка "картины" (2011/2012; 2012/2013; 2014/2015), а также кубка "открытия" (2010; 2012; 2013). Домашняя арена - "Нефтекамский ледовый" дворец вместимостью 2000 человек.<br/>
-	"Агидель" женский хоккейный клуб из Уфы, играющий в женской хоккейной лиге и основанный 31 августа 2010 года.</p>
-	<blockquote>Интересный факт: "Агидель" провела свой первый матч 23 сентября 2010 года в гостях, против "Скиф", проиграв матч со счетом 26:0. В своём первом сезоне клуб так и не смог победить ни одного матча из 30. За эти матчи "Агидель" забросила 22 шайбы и пропустила 288.</blockquote>
-	<p>"Агидель" бронзовый призер чемпионата <abbr title="Женская хоккейная Лига">ЖХЛ</abbr> (2011/2012; 2012/2013; 2013/2014; 2014/2015), а также серебряный призер (2015/2016; 2016/2017) и чемпион 2017/2018. Домашняя арена - дворец спорта "Салават Юлаев" вместимостью 3501 человек.</p>
-	<p id="Борьба"><img class="minimized" style="height: 300px" title="" src="img/Курәш.jpeg"><strong>Борьба на поясах (Курәш). </strong>Курәш на территории республики существовал с древних времён, ещё до присоединения Башкирии к России. Предположительно, данный вид борьбы пришёл с исламом (в годы монгольского нашествия), который не утратил своей популярности до сих пор.<br/>
-	Соревнования по борьбе на поясах проходят на сабантуях и других народных праздниках. Основные правила борьбы:
-	<ul style="border: none; color: #e7685d; width: 70%;">
-			<li>Борьба проходит в стойке стоя. Все броски, выполненные в стойке, оценивают судьи
-			<li>Если оценки соперников равны, победу присуждают по последней оценке
-			<li>Если участником (участницей) получена как оценка, так и наказание, преимущество отдается оценке
-			<li>Состязания проводят по олимпийской системе, утешительные схватки отсутствуют
-			<li>В Курәше проводят оценку приёмам, которые были начаты внутри безопасной территории татами и завершены за границами опасной линии татами
-	</ul></p>
-	<p>С 1948 года ежегодно проводились чемпионаты Башкирии. В Башкортостане действует около 70 отделений по курәшу в спортивных школах, где на 2012 год занимались свыше 12 тысяч человек. Воспитанники спортивных школ республики многократно становились чемпионами РСФСР, России и Мира, победителями Кубка мира и других международных соревнований. С 1966 года функционирует Федерация по национальной борьбе — курәш Республики Башкортостан.</p>
-	<p id="Футбол"><img class="minimized" title="ФК «Уфа»" style="height: 300px" src="https://s-cdn.sportbox.ru/images/styles/upload/fp_fotos/72/52/0d53a9caf26273560a4db92f419146bf5b031e0510119134769007.jpg"><strong>Футбол. </strong>активно развиваться футбол начал только с 2010 года. Конечно, существовали футбольные команды ещё в далёком начале  XX века: это сборная команда Уфы (1909), Стерлитамак (1912), Белебее (1922) и других городах края. Даже в 1913 году футбольная команда Уфы заняла I место в первом Чемпионате Урала по футболу, а позже, в 1923 году, бронзовым призёром олимпиады Поволжья. Однако, в СССР башкирский футбол развития не получил.<br/>
-	С распадом Советского Союза постепенно футбол начал внедряться в спорт республики: в 1997 году создаётся Федерация футбола Республики Башкортостан, через 3 года Ассоциация женского футбола. <abbr title="Футбольный клуб">ФК</abbr> "Уфа" был основан только в 2010 году.<br/>
-	Заняли II место заняли в зоне "Урал-Поволжье" (2011/2012), IV место в Футбольной Национальной Лиге (2012/2014). Благодаря таким успешным матчам клуб вошёл в Премьер-Лигу (Высшая Лига в РФ). Стадион команды - "Нефтяник" вместимость 15 200 человек.<br/>
-	Помимо Уфы, у других городов республики есть свои ФК: это "Горняк" из Учалов, "Нефтяник" из Ишимбая и "Содовик" и Стерлитамака (один из первых - основан в 1961).</p>
-	<p id="Биатлон"><img class="minimized" style="height: 300px" title="" src="img/Летний_биатлон.jpg"><strong>Горнолыжный спорт. </strong>Биатлон в Башкирии набрал популярность ещё при СССР, причиной этому стало активное внедрение его в БАССР в середине XX века. Таким образом, В 1987 году в Уфе была открыта Спортивная школа олимпийского резерва по биатлону. С 2000 года функционирует Федерация биатлонистов Республики Башкортостан.<br/>
-	Башкирский комплекс «Биатлон» в Уфе, построенный в 1986 году (реконструирован в 2001), стал одним из крупнейших сооружений по биатлону в РФ, из-за чего в  нём прошли:<br/>
-		<ul style="border: none; color: #e7685d; width: 70%;">
-			<li>Чемпионаты мира по летнему биатлону (2006, 2012)
-			<li>Чемпионат европы по биатлону (2009)
-			<li>Чемпионаты России по биатлону
-	</ul></p>
-	<p>Из республики немало олимпийских чемпионов и призёров по биатлону:
-	<ul style="border: none; color: #e7685d; width: 70%;">
-			<li>Куклева Галина
-			<li>Вилухина Ольга
-			<li>Муслимов Павел
-			<li>Чудов Максим
-	</ul></p>
-	<p id="Волейбол"><img class="minimized" style="height: 300px" title="Победа «Урала» над «Новой»" src="img/ВК_Урал.jpg"><strong>Волебол. </strong>Первые школы по волейболу открылись с в 1920-е годы. Но дальнейшего развития спорт так и не получил.<br/>
-	С распадом СССР В Уфе были сформированы первые волейбольные клубы: это уфимский клуб "Урал" (1992), "Буревестники" (основан в 1970, начал развиваться в 90-е годы; нынешнее название:"Уфимочка-УГНТУ"), салаватский "Нефтехимик" (1996), позже стерлитамакский "СпортАкадемия-ВРЗ" (2005).<br/>
-	"Урал" является участником Суперлиги (Чемпионат РФ, или Высшая Лига). Стал финалистом в европейском Кубке вызова, и серебренным призёром Суперлиги (2012/2013).<br/>
-	Женский волейбольный клуб "Уфимочка-УГНТУ" стал чемпионом в Высшей Лиге в 2012 году. Клуб "Нефтехимик" вошёл состав Высшей Лиге в 2005 году.</p>
-	<footer class="row"><br/>Билалов Азат, Ардуванов Ильнур ©
-	  <form class="code">
-	    <input class="search" type="text" placeholder="Код"/> 
-		<input href="" onclick="code()" class="img_search" type="image" width="20" height="20" src="img/search.png" alt="ПОИСК" />
-		<noscript><br/>Включите JavaScript, чтобы вводить команды!</noscript>
-	  </form>
 	</footer>
+
+	<a href="#" id="arrowUp" style="position: fixed; bottom: 10%; right: 10%; background-color: #0d6efd; border-radius: 50%; height: 4em; width: 4em;" onclick="">
+		<i class="fa fa-arrow-up fa-2x text-white" style="margin:25% 25%;" aria-hidden="true"></i>
+	</a>
+
   </body>
 </html>

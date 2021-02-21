@@ -1,76 +1,277 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
-    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
-    <script src="JS.js"></script>
-    <title>Башкирские композиторы</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <title>TerraБАШКОРТ | Домашняя страница</title>
+	<style>
+		@font-face {
+			font-family: 'Galaxy Girl'; 
+			src: url(../Galaxy_Girl.otf); 
+		}
+		p.begin::first-letter {
+			font-size: 3em;
+			/*padding: 3px;*/
+			margin-right: 3px;
+			margin-left: -3px;
+			color: #e7685d;
+			float: left;
+			line-height: 0.3em;
+		}
+
+		.proo {
+			max-width: 40em;
+			min-width: 15em;
+			overflow: auto;
+			margin: 0 auto;
+			position: fixed;
+			top: 3ex; 
+			left: 0;
+			right: 0;
+			z-index: 999;
+		}
+
+		.footer-bs {
+			background-color: #3c3d41;
+			margin-top: 16px;
+			padding: 20px 40px;
+			color: rgba(255,255,255,1.00);
+			border-bottom-right-radius: 6px;
+		}
+		.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+		.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+		.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+		.footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+		.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+		.footer-bs .footer-nav h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+
+		.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.list li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+		.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+		.footer-bs .footer-social ul { list-style:none; padding:0px; }
+		.footer-bs .footer-social h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		.footer-bs .footer-social li { padding:5px 4px;}
+		.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+		.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+		.footer-bs .footer-ns h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+		.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		@media (min-width: 768px) {
+			.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+		}
+
+		blockquote {
+			margin: 0;
+			margin-top: -1em;
+			padding: 40px;
+			color: #3F484D;
+			position: relative;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+		}
+		blockquote:before, blockquote:after {
+			font-size: 45px;
+			color: #3CA1D9;
+			position: absolute;
+			height: 2px;
+			left: 40px;
+			right: 40px;
+			line-height: .5;
+			background: linear-gradient(to right, #3CA1D9 45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 55%, #3CA1D9 55%);
+			font-family: serif;
+		}
+		blockquote:before {
+			content: "\201C";
+			top: 30px;
+		}
+		blockquote:after {
+			content: "\201D";
+			bottom: 30px;
+		}
+		blockquote footer {
+			margin-bottom: 1em;
+		}
+		blockquote cite {
+			font-style: normal;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			$('#arrowUp').fadeOut();
+		});
+
+		function alertClose() {
+			$('#darkBackground').fadeToggle();
+		}
+
+		window.onscroll = function() {
+			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			if (scrolled >= 150) {
+				$('#arrowUp').fadeIn('slow');
+			} else {
+				$('#arrowUp').fadeOut('slow');
+			}
+		};
+	</script>
+
   </head>
   <body>
-	<div class="wrapper">
-		<div class="menu">
-			<div class="menu-but"></div>
-			<div class="menu-list">
-				<div class = ""><a href="../history.html" title="История РБ">История</a></div>
-				<div class = ""><a href="../kulture.html" title="Культура РБ">Культура</a></div>
-				<div class = ""><a href="../area.html" title="Красивые места РБ">Места</a></div>
-				<div class = "" title="РБ с научной точки зрения"><a href="../numbers">Цифры</a></div>
+
+	<nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #9ACD32;">
+  		<div class="container-fluid">
+    		<a class="navbar-brand" href="../index.html" style="font-family: 'Galaxy Girl'; font-size: 28px">TerraБАШКОРТ</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+	    	</button>
+	    	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	      		<div class="navbar-nav" style="margin-inline-start: auto;">
+			        <a class="nav-link p-lg-3" href="../history.html">История</a>
+			        <a class="nav-link p-lg-3" href="../kulture.html">Культура</a>
+			        <a class="nav-link p-lg-3" href="../area.html">Места</a>
+			        <a class="nav-link p-lg-3" href="../numbers.html">Цифры</a>
+	      		</div>
+	    	</div>
+  		</div>
+	</nav>
+
+	<div class="container">
+
+	    <h3 class="text-center p-2">Башкирские композиторы</h3>
+
+		<div class="list-group mb-5 mt-3">
+			<a class="list-group-item list-group-item-action" href="#Муртазин">Рауф Муртазин</a>
+			<a class="list-group-item list-group-item-action" href="#Ахметов">Хусаин Ахметов</a>
+			<a class="list-group-item list-group-item-action" href="#Исмагилов">Загир Исмагиловр</a>
+			<a class="list-group-item list-group-item-action" href="#Сабитов">Нариман Сабитов</a>
+			<a class="list-group-item list-group-item-action" href="#Сальманов">Рафик Сальманов</a>
+		</div>
+
+		<p id="Муртазин"><strong>Рауф Муртазин. </strong>Родился 15 января 1910 года в деревне Темясово Баймакского района. Окончив в своём районе семилетнюю школу, Муртазин поступил в Уфимский музыкальный техникум на оркестровое отделение. В это же время он играл в оркестре Башкирского драматического театра на трубе.<br/>
+		С 1937 года Рауф Муртазин обучался в башкирском отделении Московской консерватории. Учёбу прервала война: композитор отбывает на фронт. Через полгода он принял участие в обороне Москвы, где был ранен и вскоре демобилизирован.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" title="Рауф Муртазин" src="img/Myrtazin.jpg">
+
+		<p>После окончания ВОВ Рауф наконец завершает и своё обучение в консерватории. В 1947 году возвращается Уфу и выполняет функции заместителя председателя Союза композиторов. В 50-60-х годах выходят ставшие впоследствии известными оперы:  «Азат», «Буря», а также произведения для симфонического оркестра, камерно-инструментальные произведения, более 150 песен и романсов на стихи башкирских поэтов.</p>
+		    ‌‌‍‍
+		<audio controls title="Буря" style="width: 50%; margin-left: 25%;">
+			<source src="img/Byra.mp3">
+		</audio>
+
+		<p>За свою музыкальную деятельность Рауф Муртазин был награждён двумя орденами «Знак Почёта», множеством медалями, в том числе «За оборону Москвы», «За доблестный труд».</p>
+
+		<p id="Ахметов"><strong>Хусаин Ахметов. </strong>Родился 6 января 1914 года в деревне Чингиз нынешнего Баймакского района. В 1932 году Хусаин начинает учёбу в башкирской национальной студии Московской консерватории. До 1936 года Ахметов обучался вокальному исполнению, но впоследствии стало ясно, что гораздо лучше он себя проявляет в музыке. Таким образом, с 1936 по 1941 год он обучался по классу композиции.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" title="Хусаин Ахметов" src="img/Ahmetov.jpg">
+
+		<p>С началом войны композитор становится музыкальным редактором Республиканского комитета радиофикации. В 1944 году Хусаин ахметов заканчивает своё обучение при Московской консерватории и уже в 1946 становится художественным руководителем Башкирской филармонии. В 1948 году Ахметов занимает пост председателя правления Союза композиторов Башкирской АССР, с которого уходит в 1953.<br/>
+		За свою жизнь башкирский композитор написал более 600 песен и романсов, 12 вокальных циклов на стихи башкирских и русских поэтов, а также оперные, симфонические, хоровые произведения, за что был удостоен 2-х орденов «Знак Почёта», кроме того Хусаин Ахметов является Народным артистом РСФСР и лаурятом Республиканской премии имени Салавата Юлаева.</p>
+
+		<audio controls title="Утро на Урале" style="width: 50%; margin-left: 25%;">
+			<source src="img/Ural.mp3">
+		</audio>
+
+		<p id="Исмагилов"><strong>Загир Исмагилов. </strong>Родился 26 декабря 1916 года в деревне Верхне-Серменево Белорецкого района. Начальное 7-летнее образование получил в соседней деревне, после чего поступил учиться в 1937 году в башкирскую студию при Московской консерватории имени П.И. Чайковского.<br/>
+		Во время Великой Отечественной войны юный композитор начал активно работать в Уфе: писал песни патриотического содержания  («Башкирские батыры», «Песня о героях», «Последнее письмо», «Шаймуратов генерал») и выступал на фронтовых концертах. В 1948 году Исмагилов наконец заканчивает обучение в башкирской студии, а в 1954 завершает учёбу композиторский факультет консерватории. Уже через 4 года он становится председателем Союза композиторов БАССР. Кроме того, Загир Исмагилов руководил Уфимским государственным институтом искусств.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" title="Загир Исмагилов" src="img/Izmagilov.jpg">
+
+		<p>Творческая деятельность Исмагилова очень богата: оперы «Салават Юлаев» (дипломная работа по окончанию композиторского факультета), «Послы Урала», «Кахым-туря», «Акмулла», балет «Журавлиная песнь» (Совместно с Л.Б. Степановым), более 300 романсов и песен. Исмагилов внёс огромный вклад в развитие башкирского музыкального искусства, за что был награждён высшей наградой Советского Союза Орденом Ленина, а также башкирский композитор по праву является Заслуженным артистом РСФСР и СССР.</p>
+
+		<audio controls title="Шаймуратов-генерал" style="width: 50%; margin-left: 25%;">
+			<source src="img/Shaimyratov.mp3">
+		</audio>
+
+		<p id="Сабитов"><strong>Нариман Сабитов. </strong>Родился 11 января 1925 года в Казани. По приезду в Уфу Сабитов в 1944 году поступает Башкирскую национальную студию Московской консерватории. Окончив обучение, Нуриман продолжил учёбу в композиторском факультете консерватории, параллельно обучаясь на курсе симфонического дирижирования.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" title="Нариман Сабитов" src="img/Sabitov.jpg">
+
+		<p>После выпуска Нуриман Сабитов становится дирижёром Башкирского театра оперы и балета. Именно в 50-60-х композитор написал ставшими известными балеты «Горный орел», «Гульназира», «Люблю тебя, жизнь». Ушёл Сабитов очень рано - в 1971 году, но оставил после себя большое творческое богадство: симфонические поэмы, сюиты, концерты для скрипки, фортепьяно и симфонического оркестра, прелюдии и произведения для хора, более 200 песен и романсов.</p>
+
+		<audio controls title="Көй" style="width: 50%; margin-left: 25%;">
+			<source src="img/Koy.mp3">
+		</audio>
+
+		<p id="Сальманов"><strong>Рафик Сальманов. </strong>Родился 15 сентября 1917 года в селе Аскарово в нынешнем Абзелиловском районе Башкортстана. В 1947 году Сальманов становится студентом башкирской студии Московской консерватории, полностью окончив обучение в 1953. С этого момента начинается творческая деятельность талантливого композитора: выступает на Башкирском радио, работает консультантом Республиканского Дома народного творчества. За личные заслуги Рафика Сальманова принимают в Союз композиторов БАССР.</p>
+
+		<audio controls title="Поэма для флейты и фортепиано —" style="width: 50%; margin-left: 25%;">
+			<source src="img/Poem.mp3">
+		</audio>
+
+		<p>Нельзя недоценить вклад Сальманова в развитии башкирской инструментальной музыки: ведь многие считают его - основоположником профессиональной музыки края. Это объясняют, например, его детские произведения «Поют юные друзья», «Подарю стране цветы», а также инструментальные пьесы для фортепиано и баяна.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" title="Рафик Сальманов" src="img/Salmanov.jpg">
+	
+	</div>
+
+	<footer class="footer-bs container-fluid">
+		<div class="row">
+			<div class="col-md-3 footer-brand animated fadeInLeft">
+				<h2 class="d-sm-block d-md-none d-lg-block" style="font-family: 'Galaxy Girl'; font-size: 24px">TerraБАШКОРТ</h2>
+				<h2 class="d-md-block d-lg-none d-none" style="font-family: 'Galaxy Girl'; font-size: 16px">TerraБАШКОРТ</h2>
+				<p>Сайт, помогающий в поиске интересующей информации о Республике Башкортстан. Написан «с нуля» с использованием библиотеки Bootstrap 5.</p>
+				<p>© 2021 Bilalov A. K.</p>
+			</div>
+			<div class="col-md-4 footer-nav animated fadeInUp">
+				<h4>Меню —</h4>
+				<div class="col-md-6">
+					<ul class="pages">
+					<li><a href="../history.html">История</a></li>
+					<li><a href="../kulture.html">Культура</a></li>
+					<li><a href="../area.html">Места</a></li>
+					<li><a href="../numbers.html">Цифры</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 footer-social animated fadeInDown">
+				<h4>Подписаться в</h4>
+				<ul>
+					<li><a href="https://vk.com/id162340153">VK</a></li>
+					<li><a href="https://t.me/azat_bil">Telegram</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-ns animated fadeInRight">
+				<h4>Поиск</h4>
+				<p>Позволяет быстро найти интересующую информацию (тестовая функция)</p>
+				<p>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+						</span>
+					</div>
+				</p>
 			</div>
 		</div>
-	</div>
-    <header>
-      <div class = "title"><strong><a href="../index.html" class="title" title="Главная страница">100 лет Башкорстану</a></strong></div>
-	  <div class = "history"><a href="../history.html" title="История РБ">История</a></div>
-	  <div class = "kulture"><a href="../kulture.html" title="Культура РБ">Культура</a></div>
-	  <div class = "area"><a href="../area" title="Красивые места РБ">Места</a></div>
-	  <div class = "numbers" title="РБ с научной точки зрения"><a href="../numbers.html">Цифры</a></div>
-	</header>
-    <h1>Башкирские композиторы</h1>
-	<h2>Содержание:</h2>
-		<ul>
-			<li><a href="#Муртазин">Рауф Муртазин</a>
-			<li><a href="#Ахметов">Хусаин Ахметов</a>
-			<li><a href="#Исмагилов">Загир Исмагилов</a>
-			<li><a href="#Сабитов">Нариман Сабитов</a>
-			<li><a href="#Сальманов">Рафик Сальманов</a>
-		</ul>
-	</nav>
-	<p id="Муртазин"><img class="minimized" title="Рауф Муртазин" src="img/Myrtazin.jpg"><strong>Рауф Муртазин. </strong>Родился 15 января 1910 года в деревне Темясово Баймакского района. Окончив в своём районе семилетнюю школу, Муртазин поступил в Уфимский музыкальный техникум на оркестровое отделение. В это же время он играл в оркестре Башкирского драматического театра на трубе.<br/>
-	С 1937 года Рауф Муртазин обучался в башкирском отделении Московской консерватории. Учёбу прервала война: композитор отбывает на фронт. Через полгода он принял участие в обороне Москвы, где был ранен и вскоре демобилизирован.<br/>
-	После окончания ВОВ Рауф наконец завершает и своё обучение в консерватории. В 1947 году возвращается Уфу и выполняет функции заместителя председателя Союза композиторов. В 50-60-х годах выходят ставшие впоследствии известными оперы:  «Азат», «Буря», а также произведения для симфонического оркестра, камерно-инструментальные произведения, более 150 песен и романсов на стихи башкирских поэтов.<br/>    ‌‌‍‍
-	<audio controls title="Буря" style="width: 50%; margin-left: 25%;">
-		<source src="img/Byra.mp3">
-	</audio><br/>
-	За свою музыкальную деятельность Рауф Муртазин был награждён двумя орденами «Знак Почёта», множеством медалями, в том числе «За оборону Москвы», «За доблестный труд».</p>
-	<p id="Ахметов"><img class="minimized" title="Хусаин Ахметов" src="img/Ahmetov.jpg"><strong>Хусаин Ахметов. </strong>Родился 6 января 1914 года в деревне Чингиз нынешнего Баймакского района. В 1932 году Хусаин начинает учёбу в башкирской национальной студии Московской консерватории. До 1936 года Ахметов обучался вокальному исполнению, но впоследствии стало ясно, что гораздо лучше он себя проявляет в музыке. Таким образом, с 1936 по 1941 год он обучался по классу композиции.<br/>
-	С началом войны композитор становится музыкальным редактором Республиканского комитета радиофикации. В 1944 году Хусаин ахметов заканчивает своё обучение при Московской консерватории и уже в 1946 становится художественным руководителем Башкирской филармонии. В 1948 году Ахметов занимает пост председателя правления Союза композиторов Башкирской АССР, с которого уходит в 1953.<br/>
-	За свою жизнь башкирский композитор написал более 600 песен и романсов, 12 вокальных циклов на стихи башкирских и русских поэтов, а также оперные, симфонические, хоровые произведения, за что был удостоен 2-х орденов «Знак Почёта», кроме того Хусаин Ахметов является Народным артистом РСФСР и лаурятом Республиканской премии имени Салавата Юлаева.
-	<audio controls title="Утро на Урале" style="width: 50%; margin-left: 25%;">
-		<source src="img/Ural.mp3">
-	</audio></p>
-	<p id="Исмагилов"><img class="minimized" title="Загир Исмагилов" src="img/Izmagilov.jpg"><strong>Загир Исмагилов. </strong>Родился 26 декабря 1916 года в деревне Верхне-Серменево Белорецкого района. Начальное 7-летнее образование получил в соседней деревне, после чего поступил учиться в 1937 году в башкирскую студию при Московской консерватории имени П.И. Чайковского.<br/>
-	Во время Великой Отечественной войны юный композитор начал активно работать в Уфе: писал песни патриотического содержания  («Башкирские батыры», «Песня о героях», «Последнее письмо», «Шаймуратов генерал») и выступал на фронтовых концертах. В 1948 году Исмагилов наконец заканчивает обучение в башкирской студии, а в 1954 завершает учёбу композиторский факультет консерватории. Уже через 4 года он становится председателем Союза композиторов БАССР. Кроме того, Загир Исмагилов руководил Уфимским государственным институтом искусств.<br/>
-	Творческая деятельность Исмагилова очень богата: оперы «Салават Юлаев» (дипломная работа по окончанию композиторского факультета), «Послы Урала», «Кахым-туря», «Акмулла», балет «Журавлиная песнь» (Совместно с Л.Б. Степановым), более 300 романсов и песен. Исмагилов внёс огромный вклад в развитие башкирского музыкального искусства, за что был награждён высшей наградой Советского Союза Орденом Ленина, а также башкирский композитор по праву является Заслуженным артистом РСФСР и СССР.<br/>
-	<audio controls title="Шаймуратов-генерал" style="width: 50%; margin-left: 25%;">
-		<source src="img/Shaimyratov.mp3">
-	</audio></p>
-	<p id="Сабитов"><img class="minimized" title="Нариман Сабитов" src="img/Sabitov.jpg"><strong>Нариман Сабитов. </strong>Родился 11 января 1925 года в Казани. По приезду в Уфу Сабитов в 1944 году поступает Башкирскую национальную студию Московской консерватории. Окончив обучение, Нуриман продолжил учёбу в композиторском факультете консерватории, параллельно обучаясь на курсе симфонического дирижирования.<br/>
-	После выпуска Нуриман Сабитов становится дирижёром Башкирского театра оперы и балета. Именно в 50-60-х композитор написал ставшими известными балеты «Горный орел», «Гульназира», «Люблю тебя, жизнь». Ушёл Сабитов очень рано - в 1971 году, но оставил после себя большое творческое богадство: симфонические поэмы, сюиты, концерты для скрипки, фортепьяно и симфонического оркестра, прелюдии и произведения для хора, более 200 песен и романсов.<br>
-	<audio controls title="Көй" style="width: 50%; margin-left: 25%;">
-		<source src="img/Koy.mp3">
-	</audio></p>
-	<p id="Сальманов"><img class="minimized" title="Рафик Сальманов" src="img/Salmanov.jpg"><strong>Рафик Сальманов. </strong>Родился 15 сентября 1917 года в селе Аскарово в нынешнем Абзелиловском районе Башкортстана. В 1947 году Сальманов становится студентом башкирской студии Московской консерватории, полностью окончив обучение в 1953. С этого момента начинается творческая деятельность талантливого композитора: выступает на Башкирском радио, работает консультантом Республиканского Дома народного творчества. За личные заслуги Рафика Сальманова принимают в Союз композиторов БАССР.<br/>
-	Нельзя недоценить вклад Сальманова в развитии башкирской инструментальной музыки: ведь многие считают его - основоположником профессиональной музыки края. Это объясняют, например, его детские произведения «Поют юные друзья», «Подарю стране цветы», а также инструментальные пьесы для фортепиано и баяна.<br/>
-	<audio controls title="Поэма для флейты и фортепиано
-—" style="width: 50%; margin-left: 25%;">
-		<source src="img/Poem.mp3">
-	</audio></p>
-	<footer class="row"><br/>Билалов Азат ©
-	  <form class="code">
-	    <input class="search" type="text" placeholder="Код"/> 
-		<input href="" onclick="code()" class="img_search" type="image" width="20" height="20" src="img/search.png" alt="ПОИСК" />
-		<noscript><br/>Включите JavaScript, чтобы вводить команды!</noscript>
-	  </form>
 	</footer>
+
+	<a href="#" id="arrowUp" style="position: fixed; bottom: 10%; right: 10%; background-color: #0d6efd; border-radius: 50%; height: 4em; width: 4em;" onclick="">
+		<i class="fa fa-arrow-up fa-2x text-white" style="margin:25% 25%;" aria-hidden="true"></i>
+	</a>
+
   </body>
 </html>

@@ -1,53 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
-    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
-    <script src="JS.js"></script>
-    <title>Архитектура Башкортстана</title>
-	<link rel="stylesheet" type="text/css" href="../style.css">
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <title>TerraБАШКОРТ | Домашняя страница</title>
+	<style>
+		@font-face {
+			font-family: 'Galaxy Girl'; 
+			src: url(../Galaxy_Girl.otf); 
+		}
+		p.begin::first-letter {
+			font-size: 3em;
+			/*padding: 3px;*/
+			margin-right: 3px;
+			margin-left: -3px;
+			color: #e7685d;
+			float: left;
+			line-height: 0.3em;
+		}
+
+		.proo {
+			max-width: 40em;
+			min-width: 15em;
+			overflow: auto;
+			margin: 0 auto;
+			position: fixed;
+			top: 3ex; 
+			left: 0;
+			right: 0;
+			z-index: 999;
+		}
+
+		.footer-bs {
+			background-color: #3c3d41;
+			margin-top: 16px;
+			padding: 20px 40px;
+			color: rgba(255,255,255,1.00);
+			border-bottom-right-radius: 6px;
+		}
+		.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+		.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+		.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+		.footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+		.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+		.footer-bs .footer-nav h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+
+		.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+		.footer-bs .footer-nav ul.list li { padding:5px 0px;}
+		.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+		.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+		.footer-bs .footer-social ul { list-style:none; padding:0px; }
+		.footer-bs .footer-social h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		.footer-bs .footer-social li { padding:5px 4px;}
+		.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+		.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+		.footer-bs .footer-ns h4 {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom:10px;
+		}
+		.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+		@media (min-width: 768px) {
+			.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+		}
+
+		blockquote {
+			margin: 0;
+			margin-top: -1em;
+			padding: 40px;
+			color: #3F484D;
+			position: relative;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+		}
+		blockquote:before, blockquote:after {
+			font-size: 45px;
+			color: #3CA1D9;
+			position: absolute;
+			height: 2px;
+			left: 40px;
+			right: 40px;
+			line-height: .5;
+			background: linear-gradient(to right, #3CA1D9 45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 55%, #3CA1D9 55%);
+			font-family: serif;
+		}
+		blockquote:before {
+			content: "\201C";
+			top: 30px;
+		}
+		blockquote:after {
+			content: "\201D";
+			bottom: 30px;
+		}
+		blockquote footer {
+			margin-bottom: 1em;
+		}
+		blockquote cite {
+			font-style: normal;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			$('#arrowUp').fadeOut();
+		});
+
+		function alertClose() {
+			$('#darkBackground').fadeToggle();
+		}
+
+		window.onscroll = function() {
+			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			if (scrolled >= 150) {
+				$('#arrowUp').fadeIn('slow');
+			} else {
+				$('#arrowUp').fadeOut('slow');
+			}
+		};
+	</script>
+
   </head>
   <body>
-	<div class="wrapper">
-		<div class="menu">
-			<div class="menu-but"></div>
-			<div class="menu-list">
-				<div class = ""><a href="../history.html" title="История РБ">История</a></div>
-				<div class = ""><a href="../kulture.html" title="Культура РБ">Культура</a></div>
-				<div class = ""><a href="../area.html" title="Красивые места РБ">Места</a></div>
-				<div class = "" title="РБ с научной точки зрения"><a href="../numbers">Цифры</a></div>
+
+	<nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #9ACD32;">
+  		<div class="container-fluid">
+    		<a class="navbar-brand" href="../index.html" style="font-family: 'Galaxy Girl'; font-size: 28px">TerraБАШКОРТ</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+	    	</button>
+	    	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	      		<div class="navbar-nav" style="margin-inline-start: auto;">
+			        <a class="nav-link p-lg-3" href="../history.html">История</a>
+			        <a class="nav-link p-lg-3" href="../kulture.html">Культура</a>
+			        <a class="nav-link p-lg-3" href="../area.html">Места</a>
+			        <a class="nav-link p-lg-3" href="../numbers.html">Цифры</a>
+	      		</div>
+	    	</div>
+  		</div>
+	</nav>
+
+	<div class="container">
+
+	    <h3 class="text-center p-2">Архитектура Башкортстана</h3>
+
+		<div class="list-group mb-5 mt-3">
+			<a class="list-group-item list-group-item-action" href="#Конгресс-хол">Конгресс-хол</a>
+			<a class="list-group-item list-group-item-action" href="#«Уфа-Арена»">«Уфа-Арена»</a>
+			<a class="list-group-item list-group-item-action" href="#Поносовой-Молло">Дом Поносовой-Молло</a>
+			<a class="list-group-item list-group-item-action" href="#Кинотеатр «Родина»">Кинотеатр «Родина»</a>
+			<a class="list-group-item list-group-item-action" href="#Гостиный двор">Гостиный двор</a>
+			<a class="list-group-item list-group-item-action" href="#Хамза-Хаджи">Мечеть Хамза-Хаджи</a>
+		</div>
+	
+		<p class="begin" id="Конгресс-хол"><strong>Конгресс-хол республики Башкортстан. </strong>Современное здание конгресс-холла Республики Башкортостан, служащее одной из главных достопримечательностей Уфы, построено на берегу реки Белой в 2007 году.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" src="img/Конгресс-хол.jpg">
+
+		<p>Архитектура этого необычного сооружения характеризуется наличием пространственных, формообразующих и цветовых прототипов башкирской культуры. Воплощением такого национального стиля стал остекленный фасад с башкирским орнаментом, смотрящий на реку Белую. Возле этого фасада на аллее Салавата Юлаева находится самый большой в республике комплекс фонтанов.<br/>Общая площадь конгресс-холла составляет порядка 36 тысяч квадратных метров. В его структуру входят: концертный зал на 774 места, два конференц-зала, музейно-выставочный комплекс, ресторан национальной кухни, зимний сад, торговый центр и подземный паркинг на 230 машин.</p>
+
+		<p id="«Уфа-Арена»"><strong>«Уфа-Арена». </strong>Универсальный спортивный комплекс «Уфа-Арена», служащий домашней площадкой для местного хоккейного клуба «Салават Юлаев», был построен в 2007 году.<br/>
+		«Уфа-Арена» состоит из двух ледовых площадок: главной (на 8070 зрителей) и малой (640 зрителей). На первом этаже спортивного комплекса располагаются комнаты отдыха для спортсменов и тренерского состава, бокс для судейского корпуса, сауна, массажная комната и др.<br/>
+		Арена состоит из четырёх ярусов: вход на секторы осуществляется через второй, третий и четвёртый.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" src="img/Уфа-Арена.jpg">
+
+		<p id="Поносовой-Молло"><strong>Дом-особняк Е.А. Поносовой-Молло. </strong>Дом-особняк Е.А. Поносовой-Молло в Кировском районе был построен по заказу купца и горнозаводчика С.С. Манаева для купчихи Е.А. Поносовой-Молло в 1910 году.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" src="img/Дом_Поносовой-Молло.jpg">
+
+		<p>Данное сооружение стало первым в Уфе домом в стиле модерн. Здание состоит из двух этажей, вход расположен в центральной части, имеется выносное крыльцо в виде двухколонного портика с квадратными колоннами и треугольным фронтоном. Главный фасад украшен рустовкой, художественными карнизами, лепными украшениями и оконными наличниками. На территории особняка также расположены сад, фонтан и подсобные помещения.<br/>
+		Сегодня в этом здании находится Музей археологии и этнографии.</p>
+
+		<p id="Кинотеатр «Родина»"><strong>Кинотеатр «Родина». </strong>Уфимский кинотеатр «Родина» был построен в 1954 году. Он включал в себя два зала – синий и красный, каждый из которых был рассчитан на 350 зрителей. В связи с большим наплывом зрителей, было принято решение пристроить еще один зал на 60 мест, который получил название «зеленый».<br/>
+		Сегодня здание кинотеатра представляет собой массивную высокую постройку с острой крышей. Сооружение, выполненное в стиле "сталинский ампир", имеет белые колонны с ажурными пилястрами и большие окна, вокруг которых расположены различные декоративные элементы. Весьма необычен и главный вход в здание, увенчанный купольной аркой с ажурным орнаментом.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" src="img/Кинотеатр_Родина.jpg">
+
+		<p id="Гостиный двор"><strong>Гостиный двор. </strong>Комплекс Гостиного двора в Уфе выл возведен в 1866 году. В период с 1941 года по начало 1980-ых годов большую часть помещений Гостиного двора занимал Уфимский хлопчатобумажный комбинат.<br/>В конце XX века здание Гостиного двора хотели сносить, однако на его защиту встали местные жители. Начало реконструкции положил указ Президента Республики Башкортостан от 11 августа 1995 года, а уже в октябре 1999 года воссозданный Гостиный двор открылся и стал выполнять функцию торгового, делового и культурного центра не только Уфы, но и всей Башкирии.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2"src="img/Гостиный_двор.jpg">
+
+		<p>В декабре 2014 года завершилась реконструкция Гостиного двора, в следствии чего возросло количество парковочных мест (280→1100), а также появился большой маркет, кофе, детские зоны, зоны услуг и другое.</p>
+
+		<p id="Хамза-Хаджи"><strong>Мечеть Хамза-Хаджи. </strong>Мечеть «Хамза-Хаджи» была построена в микрорайоне Сипайлово в 2006 году. Строительство культового объекта велось на протяжении 10 лет на частные средства муфтия Хамза-Хаджи Галлямова. При мечети, названной в его честь, работает мусульманская библиотека и медресе с интернатом для детей из малообеспеченных семей.<br/>Несмотря на значимость этой мечети для города, в последнее время стали появляться слухи о том, что власти города намерены ее снести.</p>
+
+		<img class="img-fluid rounded-3 border border-primary d-block m-auto mb-2" src="https://avatars.mds.yandex.net/get-pdb/70729/a746abe5-dc38-4673-b678-2f5c37210ac5/s1200">
+
+	</div>
+	
+	<footer class="footer-bs container-fluid">
+		<div class="row">
+			<div class="col-md-3 footer-brand animated fadeInLeft">
+				<h2 class="d-sm-block d-md-none d-lg-block" style="font-family: 'Galaxy Girl'; font-size: 24px">TerraБАШКОРТ</h2>
+				<h2 class="d-md-block d-lg-none d-none" style="font-family: 'Galaxy Girl'; font-size: 16px">TerraБАШКОРТ</h2>
+				<p>Сайт, помогающий в поиске интересующей информации о Республике Башкортстан. Написан «с нуля» с использованием библиотеки Bootstrap 5.</p>
+				<p>© 2021 Bilalov A. K.</p>
+			</div>
+			<div class="col-md-4 footer-nav animated fadeInUp">
+				<h4>Меню —</h4>
+				<div class="col-md-6">
+					<ul class="pages">
+					<li><a href="../history.html">История</a></li>
+					<li><a href="../kulture.html">Культура</a></li>
+					<li><a href="../area.html">Места</a></li>
+					<li><a href="../numbers.html">Цифры</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 footer-social animated fadeInDown">
+				<h4>Подписаться в</h4>
+				<ul>
+					<li><a href="https://vk.com/id162340153">VK</a></li>
+					<li><a href="https://t.me/azat_bil">Telegram</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-ns animated fadeInRight">
+				<h4>Поиск</h4>
+				<p>Позволяет быстро найти интересующую информацию (тестовая функция)</p>
+				<p>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+						</span>
+					</div>
+				</p>
 			</div>
 		</div>
-	</div>
-    <header>
-      <div class = "title"><strong><a href="../index.html" class="title" title="Главная страница">100 лет Башкорстану</a></strong></div>
-	  <div class = "history"><a href="../history.html" title="История РБ">История</a></div>
-	  <div class = "kulture"><a href="../kulture.html" title="Культура РБ">Культура</a></div>
-	  <div class = "area"><a href="../area" title="Красивые места РБ">Места</a></div>
-	  <div class = "numbers" title="РБ с научной точки зрения"><a href="../numbers.html">Цифры</a></div>
-	</header>
-    <h1>Архитектура Башкортстана</h1>
-	<h3>Содержание:</h3>
-		<ul>
-			<li><a href="#Конгресс-хол">Конгресс-хол</a>
-			<li><a href="#«Уфа-Арена»">«Уфа-Арена»</a>
-			<li><a href="#Поносовой-Молло">Дом Поносовой-Молло</a>
-			<li><a href="#Кинотеатр «Родина»">Кинотеатр «Родина»</a>
-			<li><a href="#Гостиный двор">Гостиный двор</a>
-			<li><a href="#Хамза-Хаджи">Мечеть Хамза-Хаджи</a>
-		</ul>
-	</nav>
-	<p class="start" id="Конгресс-хол"><img class="minimized" style="height: 300px" title="Конгресс-холл" src="img/Конгресс-хол.jpg"><strong>Конгресс-хол республики Башкортстан. </strong>Современное здание конгресс-холла Республики Башкортостан, служащее одной из главных достопримечательностей Уфы, построено на берегу реки Белой в 2007 году.<br/> Архитектура этого необычного сооружения характеризуется наличием пространственных, формообразующих и цветовых прототипов башкирской культуры. Воплощением такого национального стиля стал остекленный фасад с башкирским орнаментом, смотрящий на реку Белую. Возле этого фасада на аллее Салавата Юлаева находится самый большой в республике комплекс фонтанов.<br/>Общая площадь конгресс-холла составляет порядка 36 тысяч квадратных метров. В его структуру входят: концертный зал на 774 места, два конференц-зала, музейно-выставочный комплекс, ресторан национальной кухни, зимний сад, торговый центр и подземный паркинг на 230 машин.</p>
-	<p id="«Уфа-Арена»"><img class="minimized" style="height: 300px" title="«Уфа-Арена»" src="img/Уфа-Арена.jpg"><strong>«Уфа-Арена». </strong>Универсальный спортивный комплекс «Уфа-Арена», служащий домашней площадкой для местного хоккейного клуба «Салават Юлаев», был построен в 2007 году.<br/>«Уфа-Арена» состоит из двух ледовых площадок: главной (на 8070 зрителей) и малой (640 зрителей). На первом этаже спортивного комплекса располагаются комнаты отдыха для спортсменов и тренерского состава, бокс для судейского корпуса, сауна, массажная комната и др.<br/>Арена состоит из четырёх ярусов: вход на секторы осуществляется через второй, третий и четвёртый.<br/><br/><br/><br/><br/></p>
-	<p id="Поносовой-Молло"><img class="minimized" style="height: 300px" title="Дом-особняк Поносовой-Молло" src="img/Дом_Поносовой-Молло.jpg"><strong>Дом-особняк Е.А. Поносовой-Молло. </strong>Дом-особняк Е.А. Поносовой-Молло в Кировском районе был построен по заказу купца и горнозаводчика С.С. Манаева для купчихи Е.А. Поносовой-Молло в 1910 году.<br/>Данное сооружение стало первым в Уфе домом в стиле модерн. Здание состоит из двух этажей, вход расположен в центральной части, имеется выносное крыльцо в виде двухколонного портика с квадратными колоннами и треугольным фронтоном. Главный фасад украшен рустовкой, художественными карнизами, лепными украшениями и оконными наличниками. На территории особняка также расположены сад, фонтан и подсобные помещения.<br/>Сегодня в этом здании находится Музей археологии и этнографии.<br/><br/><br/></p>
-	<p id="Кинотеатр «Родина»"><img class="minimized" style="height: 300px" title="Кинотеатр «Родина»" src="img/Кинотеатр_Родина.jpg"><strong>Кинотеатр «Родина». </strong>Уфимский кинотеатр «Родина» был построен в 1954 году. Он включал в себя два зала – синий и красный, каждый из которых был рассчитан на 350 зрителей. В связи с большим наплывом зрителей, было принято решение пристроить еще один зал на 60 мест, который получил название «зеленый».<br/>Сегодня здание кинотеатра представляет собой массивную высокую постройку с острой крышей. Сооружение, выполненное в стиле "сталинский ампир", имеет белые колонны с ажурными пилястрами и большие окна, вокруг которых расположены различные декоративные элементы. Весьма необычен и главный вход в здание, увенчанный купольной аркой с ажурным орнаментом.<br/><br/><br/></p>
-	<p id="Гостиный двор"><img class="minimized" style="height: 300px" title="Гостиный двор" src="img/Гостиный_двор.jpg"><strong>Гостиный двор. </strong>Комплекс Гостиного двора в Уфе выл возведен в 1866 году. В период с 1941 года по начало 1980-ых годов большую часть помещений Гостиного двора занимал Уфимский хлопчатобумажный комбинат.<br/>В конце XX века здание Гостиного двора хотели сносить, однако на его защиту встали местные жители. Начало реконструкции положил указ Президента Республики Башкортостан от 11 августа 1995 года, а уже в октябре 1999 года воссозданный Гостиный двор открылся и стал выполнять функцию торгового, делового и культурного центра не только Уфы, но и всей Башкирии.<br/>В декабре 2014 года завершилась реконструкция Гостиного двора, в следствии чего возросло количество парковочных мест (280→1100), а также появился большой маркет, кофе, детские зоны, зоны услуг и другое.</p>
-	<p id="Хамза-Хаджи"><img class="minimized" style="height: 250px;" title="Мечеть Хамза-Хаджи" src="https://avatars.mds.yandex.net/get-pdb/70729/a746abe5-dc38-4673-b678-2f5c37210ac5/s1200"><strong>Мечеть Хамза-Хаджи. </strong>Мечеть «Хамза-Хаджи» была построена в микрорайоне Сипайлово в 2006 году. Строительство культового объекта велось на протяжении 10 лет на частные средства муфтия Хамза-Хаджи Галлямова.<br/>При мечети, названной в его честь, работает мусульманская библиотека и медресе с интернатом для детей из малообеспеченных семей.<br/>Несмотря на значимость этой мечети для города, в последнее время стали появляться слухи о том, что власти города намерены ее снести.<br/><br/><br/><br/></p>
-	<footer class="row"><br/>Билалов Азат ©
-	  <form class="code">
-	    <input class="search" type="text" placeholder="Код"/> 
-		<input href="" onclick="code()" class="img_search" type="image" width="20" height="20" src="img/search.png" alt="ПОИСК" />
-		<noscript><br/>Включите JavaScript, чтобы вводить команды!</noscript>
-	  </form>
 	</footer>
+
+	<a href="#" id="arrowUp" style="position: fixed; bottom: 10%; right: 10%; background-color: #0d6efd; border-radius: 50%; height: 4em; width: 4em;" onclick="">
+		<i class="fa fa-arrow-up fa-2x text-white" style="margin:25% 25%;" aria-hidden="true"></i>
+	</a>
+
   </body>
 </html>
